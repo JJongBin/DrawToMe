@@ -4,28 +4,28 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>진행중인 드로우</title>
+		<title>내게드로우 | 진행중인 드로우</title>
 	</head>
 	<body>
 		<!-- 헤더 -->
 		<header>
-			<h1 class="sr-only">내게드로우</h1>
+			<h1 class="logo">
+				<a aria-label="로고" href="./index.html"></a>
+			</h1>
+
 			<!-- 로고 -->
-			<a href="./index.html" class="logo">
-				<img src="" alt="내게드로우 로고" />
-			</a>
 
 			<!-- 로그인 및 회원가입  -->
-			<div class="user">
+			<div class="member">
 				<h2 class="sr-only">로그인 및 회원가입</h2>
 				<a href="#">로그인</a>
 				<a href="#">회원가입</a>
 			</div>
 
 			<!-- 네비게이션 -->
-			<nav>
+			<nav class="navigation">
 				<h2 class="sr-only">메뉴</h2>
-				<ul>
+				<ul class="navigation-list">
 					<li>
 						<a href="./drawlist.html">진행중인 드로우</a>
 					</li>
@@ -39,6 +39,7 @@
 			</nav>
 		</header>
 
+		<!-- 진행중인 드로우 -->
 		<main>
 			<section class="search">
 				<h2 class="sr-only">상품 검색</h2>
@@ -53,41 +54,71 @@
 							placeholder="상품명 검색"
 							required
 						/>
-						<button type="submit" class="button-search">검색</button>
+						<button type="submit" class="search-btn">검색</button>
 					</fieldset>
 				</form>
 			</section>
 
-			<section class="item-list">
+			<section class="">
 				<h2>진행중인 드로우 상품 목록</h2>
 				<button aria-label="더보기" type="button" class=""><i></i></button>
-				<ul class="class">
-					<li class="class">
-						<a href="https://www.nike.com">
-							<img
+				<ul class="">
+					<li>
+						<a href="#">
+							<figure>
+								<img
 								style="width: 200px"
 								src="./images/shoes.jpg"
 								alt="nike shoes"
 							/>
+								<figcaption>
+									<span>덩크 로우 블랙화이트1</span>
+									<span>10000</span>
+								</figcaption>
+							</figure>
 						</a>
+						<div>
+							<span> 상세 설명 </span>
+							<span> 지점 </span>
+						</div>
 					</li>
-					<li class="class">
-						<a href="https://www.nike.com">
-							<img
+					<li>
+						<a href="#">
+							<figure>
+								<img
 								style="width: 200px"
 								src="./images/shoes.jpg"
 								alt="nike shoes"
 							/>
+								<figcaption>
+									<span>덩크 로우 블랙화이트1</span>
+									<span>10000</span>
+								</figcaption>
+							</figure>
 						</a>
+						<div>
+							<span> 상세 설명 </span>
+							<span> 지점 </span>
+						</div>
 					</li>
-					<li class="class">
-						<a href="https://www.nike.com">
-							<img
+					<li>
+						<a href="#">
+							<figure>
+								<img
 								style="width: 200px"
 								src="./images/shoes.jpg"
 								alt="nike shoes"
 							/>
+								<figcaption>
+									<span>덩크 로우 블랙화이트1</span>
+									<span>10000</span>
+								</figcaption>
+							</figure>
 						</a>
+						<div>
+							<span> 상세 설명 </span>
+							<span> 지점 </span>
+						</div>
 					</li>
 				</ul>
 			</section>
