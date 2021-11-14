@@ -1,152 +1,176 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내게드로우</title>
-</head>
-<body>
-  <!-- 헤더 -->
-  <header>
-    <h1 class="sr-only">내게드로우</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>내게드로우</title>
+	</head>
+	<body>
+		<!-- 헤더 -->
+		<header>
+			<h1 class="logo">
+				<a aria-label="로고" ref="./index.html"></a>
+			</h1>
 
-    <!-- 로고 -->
-    <a href="./index.html" class="logo">
-      <img src="" alt="내게드로우 로고">
-    </a>
+			<!-- 로고 -->
 
-    <!-- 로그인 및 회원가입  -->
-    <div class="user">
-      <h2 class="sr-only">로그인 및 회원가입</h2>
-      <a href="#">로그인</a>
-      <a href="#">회원가입</a>
-    </div>
+			<!-- 로그인 및 회원가입  -->
+			<div class="member">
+				<h2 class="sr-only">로그인 및 회원가입</h2>
+				<a href="#">로그인</a>
+				<a href="#">회원가입</a>
+			</div>
 
-    <!-- 네비게이션 -->
-    <nav>
-      <h2 class="sr-only">메뉴</h2>
-      <ul>
-        <li>
-          <a href="./drawlist.html">진행중인 드로우</a>
-        </li>
-        <li>
-          <a href="#">릴리즈</a>
-        </li>
-        <li>
-          <a href="#">커뮤니티</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  
-  <!-- 메인페이지 -->
-  <main>
-    <div class="first--video">
-      <!-- <iframe src="" frameborder="0"></iframe> -->
-      <div class="scroll">
-        <small>scroll</small>
-        <!-- after fontello -->
-      </div>
-    </div>
+			<!-- 네비게이션 -->
+			<nav class="navigation">
+				<h2 class="sr-only">메뉴</h2>
+				<ul class="navigation-list">
+					<li>
+						<a href="./drawlist.html">진행중인 드로우</a>
+					</li>
+					<li>
+						<a href="#">릴리즈</a>
+					</li>
+					<li>
+						<a href="#">커뮤니티</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-    <!-- 베스트 드로우 -->
-    <section class="best-draw">
-      <h2 class="sr-only">베스트 드로우</h2>
+		<!-- 메인페이지 -->
+		<main>
+			<div class="video">
+				<div class="video__container">
+					<figure class="video__iframe-container">
+						<iframe
+							class="video__iframe"
+							width="560"
+							height="315"
+							src="https://www.youtube.com/embed/6q4DSKFn_k8"
+							frameborder="0"
+							allowfullscreen
+						></iframe>
+					</figure>
+				</div>
+				<div class="video-scroll">
+					<small>scroll</small>
+					<!-- after fontello
+					-->
+				</div>
+			</div>
 
-      <ul class="swiper-wrapper">
-        <li class="swiper-slide">
-          <a href="">
-            <img src="" alt="" />
-          </a>  
-        </li>
-        <li class="swiper-slide">
-          <a href="">
-            <img src="" alt="" />
-          </a>  
-        </li>
-        <li class="swiper-slide">
-          <a href="">
-            <img src="" alt="" />
-          </a>  
-        </li>
-      </ul>
-      <div class="swiper-pagination"></div>
-      <button class="swiper-prev"></button>
-      <button class="swiper-next"></button>
-    </section>
+			<!-- 베스트 드로우 -->
+			<section class="best">
+				<h2 class="sr-only">베스트 드로우</h2>
+				<ul class="best-swiper-container">
+					<li class="best-swiper__li">
+						<a href="">
+							<img src="" alt="" />
+						</a>
+					</li>
+					<li class="swiper-slide">
+						<a href="">
+							<img src="" alt="" />
+						</a>
+					</li>
+					<li class="swiper-slide">
+						<a href="">
+							<img src="" alt="" />
+						</a>
+					</li>
+				</ul>
+				<div class="swiper-pagination"></div>
+				<button class="swiper-prev"></button>
+				<button class="swiper-next"></button>
+			</section>
 
-    <!-- 진행중인 드로우 -->
-    <section class="draw">
-      <h2 class="sr-only">진행중인 드로우</h2>
+			<!-- 진행중인 드로우 -->
+			<section class="draw">
+				<h2 class="sr-only">진행중인 드로우</h2>
 
-      <ul>
-        <li>
-          <a href="#">
-            <figure>
-              <img src="" alt="">
-              <figcaption>덩크 로우 블랙화이트1</figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <figure>
-              <img src="" alt="">
-              <figcaption>덩크 로우 블랙화이트2</figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <figure>
-              <img src="" alt="">
-              <figcaption>덩크 로우 블랙화이트3</figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <figure>
-              <img src="" alt="">
-              <figcaption>덩크 로우 블랙화이트4</figcaption>
-              <!-- hover -->
-            </figure>
-          </a>
-        </li>
-      </ul>
-    </section>
+				<ul class="">
+					<li>
+						<a href="#">
+							<figure>
+								<img src="" alt="" />
+								<figcaption>덩크 로우 블랙화이트1</figcaption>
+							</figure>
+						</a>
+						<div>
+							<span> 지점 </span>
+							<span> 상품가격 </span>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<figure>
+								<img src="" alt="" />
+								<figcaption>덩크 로우 블랙화이트2</figcaption>
+							</figure>
+						</a>
+						<div>
+							<span> 지점 </span>
+							<span> 상품가격 </span>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<figure>
+								<img src="" alt="" />
+								<figcaption>덩크 로우 블랙화이트3</figcaption>
+							</figure>
+						</a>
+						<div>
+							<span> 지점 </span>
+							<span> 상품가격 </span>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<figure>
+								<img src="" alt="" />
+								<figcaption>덩크 로우 블랙화이트4</figcaption>
+								<!-- hover -->
+							</figure>
+						</a>
+						<div>
+							<span> 지점 </span>
+							<span> 상품가격 </span>
+						</div>
+					</li>
+				</ul>
+			</section>
 
+			<!-- 나와 어울리는 신발 -->
+			<section class="recommend">
+				<h2 class="sr-only">나와 어울리는 신발은?</h2>
+				<a href="#">
+					<img src="" alt="나와 어울리는 신발찾기" />
+				</a>
+			</section>
 
-    <!-- 나와 어울리는 신발 -->
-    <section class="recommend">
-      <h2 class="sr-only">나와 어울리는 신발은?</h2>
-      <a href="#">
-        <img src="" alt="나와 어울리는 신발찾기">
-      </a>
-    </section>
+			<button aria-label="맨위로이동" type="button">test</button>
+		</main>
 
-    <div class="goTop"></div>
-  </main>
-
-
-  <!-- 푸터 -->
-  <footer>
-    <ul class="sns">
-      <li>
-        <a href="#">
-          <img src="" alt="인스타그램 로고">
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="" alt="페이스북 로고">
-        </a>
-      </li>
-    </ul>
-    <div class="info">
-      <small class="copyright"></small>
-      <a href="mailto:example@gamil.com">example@gamil.com</a>
-    </div>
-  </footer>
-</body>
+		<!-- 푸터 -->
+		<footer>
+			<ul class="sns">
+				<li>
+					<a href="#">
+						<img src="" alt="인스타그램 로고" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="" alt="페이스북 로고" />
+					</a>
+				</li>
+			</ul>
+			<div class="info">
+				<small class="copyright"></small>
+				<a href="mailto:example@gamil.com">example@gamil.com</a>
+			</div>
+		</footer>
+	</body>
 </html>
