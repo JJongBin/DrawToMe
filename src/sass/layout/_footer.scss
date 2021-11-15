@@ -1,10 +1,33 @@
 @use './../utils';
 
-.sns{
-
-
-}
-
-.info{
+.footer{
+    background-color: PINK;  
+    &__info{
+        
+        text-align: center;
+    }
+    &__icon li{
+        width:100px;
+        height:100px;
+        display: inline-block;
+        a{
+            min-height: rem(60px);
+            background-image: url(./../images/icon_sprites.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-left: rem(64px);
+            $footers: instagram, facebook, twitter, kakao ;
+            $x: 0;
+            $y: 3202px;
+            @each $footer in $footers{
+                &__#{$footer}{
+                    background-position: $x $y;
+                }
+                $y: $y - 512px;
+            }  
+            
+        }
+    }
     
 }
+
