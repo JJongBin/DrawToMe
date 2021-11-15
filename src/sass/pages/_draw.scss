@@ -1,0 +1,26 @@
+@use './../utils' as *;
+.draw {
+	position: relative;
+	&__title {
+		display: inline-block;
+		width: 100%;
+		padding: rem(20px) rem(20px) rem(20px) 0;
+		@include fontSB($size: rem(20px), $bold: 700);
+	}
+	&__button {
+		@include position($right: 0, $top: rem(20px));
+	}
+	&__list {
+		@include flexbox($justify: space-between, $wrap: wrap);
+	}
+	@include desktop {
+		background-color: yellow;
+	}
+	@include mobile {
+		background-color: pink;
+	}
+}
+
+.draw__link__img {
+	width: 200px;
+}
