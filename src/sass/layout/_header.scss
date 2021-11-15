@@ -64,7 +64,14 @@ header{
     background-color: $navy;
     color: $bg;
     li{
+      width: 8em;
+      height:46px;
+      text-align: center;
       flex-grow: 1;
+      a{
+        display: block;
+        font-size: rem(16px);
+      }
     }
   }
   @include desktop{

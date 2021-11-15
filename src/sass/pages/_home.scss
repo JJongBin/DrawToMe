@@ -17,6 +17,7 @@ main{
     object-fit: cover;
     width: 100vw;
     height:100vh;
+    top: 0;
     left:50%;
     transform:translateX(-50%);
   }
