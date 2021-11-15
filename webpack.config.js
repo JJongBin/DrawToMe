@@ -87,20 +87,23 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'),
     }),
+    // new HtmlWebpackPlugin({
+    //   template: path.join(__dirname, './src/drawlist.html'),
+    // }),
     new MiniCSSExtractPlugin({
       linkType: false,
       filename: 'css/style.css',
     }),
-    // new CopyPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.join(__dirname, 'src/assets'),
-    //       to: path.join(
-    //         __dirname,
-    //         `${isDevelopment ? paths.dist : paths.build}/assets`
-    //       ),
-    //     },
-    //   ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.join(__dirname, 'src/assets'),
+          to: path.join(
+            __dirname,
+            `${isDevelopment ? paths.dist : paths.build}/assets`
+          ),
+        },
+      ],
+    }),
   ],
 };
