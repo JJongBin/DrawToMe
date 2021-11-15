@@ -1,0 +1,25 @@
+@use './../utils' as *;
+
+main{
+  background-color: red;
+  max-width: rem(1200px);
+  margin: 0 auto;
+}
+header{
+  background-color: yellow;
+}
+
+// 1. 로고
+.logo{
+  font-size: rem(50px);
+  letter-spacing: rem(-5px);
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  &__bold{
+    font-weight: 700;
+  }
+}
+
+// 2. 네비게이션
+.navigation{
+  font-size:rem(24px);
+}
