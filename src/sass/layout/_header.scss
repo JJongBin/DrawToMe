@@ -1,13 +1,5 @@
 @use './../utils/' as *;
 
-<<<<<<< HEAD
-header{
-  background-color: $white;
-  width: 100%;
-  position: fixed;
-  height: rem(100px);
-  border-bottom: 1px solid $navy;
-=======
 
 header {
 	// visibility: hidden;
@@ -17,7 +9,6 @@ header {
 	height: rem(100px);
 	border-bottom: 1px solid $navy;
 	z-index: 1;
->>>>>>> 31fce414dfa4bac4d89905070e465e161d9dd5fe
 }
 .header-container {
 	white-space: nowrap;
