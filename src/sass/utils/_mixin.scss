@@ -1,7 +1,15 @@
+// footer 아이콘 이미지 정렬
+
 @use './unit' as *;
 @use 'sass:math';
 
 // font-size, font-weight, padding, margin, border, position,test
+
+@mixin footer-img($size: cover, $repeat: no-repeat) {
+	display: block;
+	background: url('./../assets/images/icon_sprites.png') $repeat;
+	background-size: $size;
+}
 
 @mixin fontSB($size: initial, $bold: initial) {
 	font-size: $size;
