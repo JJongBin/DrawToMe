@@ -50,14 +50,10 @@
 			<div class="video">
 				<div class="video__container">
 					<figure class="video__iframe-container">
-						<iframe
-							class="video__iframe"
-							width="560"
-							height="315"
-							src="https://www.youtube.com/embed/6q4DSKFn_k8"
-							frameborder="0"
-							allowfullscreen
-						></iframe>
+						<video class="video__iframe" muted playsinline loop autoplay>
+							<source src="assets/videos/video.mp4.webp" type="video/webp">
+							<source src="assets/videos/video.mp4" type="video/mp4">
+						</video>
 					</figure>
 				</div>
 				<div class="video-scroll">
@@ -73,17 +69,17 @@
 				<ul class="best-swiper-container">
 					<li class="best-swiper__li">
 						<a href="">
-							<img src="" alt="" />
+							<img src="./assets/images/shoes.jpeg" alt="" />
 						</a>
 					</li>
 					<li class="swiper-slide">
 						<a href="">
-							<img src="" alt="" />
+							<img src="./assets/images/shoes.jpeg" alt="" />
 						</a>
 					</li>
 					<li class="swiper-slide">
 						<a href="">
-							<img src="" alt="" />
+							<img src="./assets/images/shoes.jpeg" alt="" />
 						</a>
 					</li>
 				</ul>
@@ -160,23 +156,21 @@
 			</section>
 
 
-			<section>
-				<h2>DAILY SHOES</h2>
-				<ul>
+			<section class="daily">
+				<h2 class="daily__h2 daily__h2--medium">DAILY SHOES</h2>
+				<ul class="daily__ul">
 					<li>
 						<span>@zzamjonbin</span>
 						<figure>
-							<img src="./assets/images/shoes.jpeg" alt="데일리룩">
-							<figcaption>나 뭐신었어용</figcaption>
+							<!-- <img src="./assets/images/shoes.jpeg" alt="데일리룩"> -->
 						</figure>
 					</li>
-				</ul>
+				</uldaily__ul>
 				<ul>
 					<li>
 						<span>@chihanna</span>
 						<figure>
 							<img src="./assets/images/shoes.jpeg" alt="데일리룩">
-							<figcaption>나 뭐신었어용</figcaption>
 						</figure>
 					</li>
 				</ul>
@@ -185,7 +179,6 @@
 						<span>@quaqwakim</span>
 						<figure>
 							<img src="./assets/images/shoes.jpeg" alt="데일리룩">
-							<figcaption>나 뭐신었어용</figcaption>
 						</figure>
 					</li>
 				</ul>

@@ -1,7 +1,7 @@
 @use './../utils' as *;
 
 main{
-  padding-top: rem(100px);
+  // padding-top: rem(100px);
   // background-color: red;
   max-width: rem(1200px);
   margin: 0 auto;
@@ -9,3 +9,25 @@ main{
     padding-top: rem(146px);
   }
 }
+
+// 비디오 첫페이지
+.video{
+  &__iframe{
+    position: absolute;
+    object-fit: cover;
+    width: 100vw;
+    height:100vh;
+    top: 0;
+    left:50%;
+    transform:translateX(-50%);
+  }
+}
+
+.best{
+  margin-top: calc(100vh + 100px);
+}
+
+// 베스트 드로우
+
+
+
