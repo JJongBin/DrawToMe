@@ -1,6 +1,7 @@
 @use './../utils/' as *;
 
 header{
+  // visibility: hidden;
   background-color: $white;
   width: 100%;
   position: fixed;
@@ -42,11 +43,11 @@ header{
   // 2. 네비게이션
 .navigation{
   flex-grow: 1;
-  
   &-list{
     display: flex;
     
     li{
+      background:yellow;
       padding: rem(15px);
       // width: 8em;
       text-align: center;
@@ -67,11 +68,6 @@ header{
   @include desktop{
     font-size:rem(20px);
     margin-left: 5%;
-    
-    // li{
-    //   margin-right: rem(30px);
-
-    // }
   }
 }
 
