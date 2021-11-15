@@ -21,7 +21,6 @@ header{
 }
 // 1. 로고
 .logo{
-  color: $navy;
   font-size: rem(35px);
   letter-spacing: rem(-5px);
   font-family: 'IBM Plex Sans KR', sans-serif;
@@ -46,11 +45,14 @@ header{
   &-list{
     display: flex;
     
-    li{
-      background:yellow;
-      padding: rem(15px);
-      // width: 8em;
+    a{
       text-align: center;
+      padding: rem(15px);
+      font-size: rem(20px);
+      font-weight: 400;
+      &:hover{
+        font-weight: 700;
+      }
     }
   }
   @include mobile{
