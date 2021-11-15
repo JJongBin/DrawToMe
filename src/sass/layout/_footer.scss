@@ -1,37 +1,68 @@
-@use './../utils';
+@use './../utils' as *;
+
 
 .footer{
-    background-color: PINK;  
-    display: flex;
-    &__info{
-        
-        text-align: center;
-    }
-    
-    &__icon li{
-        width: 50px;
-        height: 50px;
-        // display: inline-block;
-        a{
-            width: 100%;
-            height: 100%;
-            min-height: rem(60px);
-            background-image: url('./../assets/images/icon_sprites.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding-left: rem(64px);
-            $footers: instagram, facebook, twitter, kakao ;
-            $x: 0;
-            $y: 3202px;
-            @each $footer in $footers{
-                &__#{$footer}{
-                    background-position: $x $y;
-                }
-                $y: $y - 512px;
-            }  
+    height:rem(140px);
+    background-color:$navy;
+    color: $lightblue;
+    &__icon{
+        display: flex;
+        li{
+            margin: rem(8px) rem(8px);
+        }
+        @include desktop{
             
         }
     }
-    
+    // 인스타그램 로고
+    &__instagram{
+        margin-left: rem(10px);
+        @include footer-img;
+        background-position: 0 rem(-180px);
+        @include desktop{
+            background-position: 0 rem(-270px);
+        }
+    }
+    // 페이스북 로고
+    &__facebook{
+        @include footer-img;
+        background-position:0 rem(-210px);
+        @include desktop{
+            background-position: 0 rem(-315px);
+        }
+    }
+    &__twitter{
+        @include footer-img;
+        background-position: 0 rem(-240px);
+        @include desktop{            
+            background-position: 0 rem(-360px);
+        }
+    }
+    &__info{
+        margin:rem(15px) 0;
+        text-align: center;
+        line-height: rem(24px);
+        
+        small{
+            display: block;
+        }
+        span{
+            font-weight: 700;
+        }
+        @include desktop{
+            margin-top: rem(5px);
+            margin-bottom: rem(20px);
+        }
+    }
 }
-
+// sns-icon 전체적인 height 조절
+.sns-icon{
+    width: rem(30px);
+    height:rem(30px);
+    text-indent: rem(-2000px);
+    overflow: hidden;
+    @include desktop{
+        width: rem(45px);
+        height:rem(45px);
+    }
+}
