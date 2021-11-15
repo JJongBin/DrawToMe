@@ -87,9 +87,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'),
     }),
-    // new HtmlWebpackPlugin({
-    //   template: path.join(__dirname, './src/drawlist.html'),
-    // }),
+    new HtmlWebpackPlugin({
+      template:'./src/drawlist.html',
+      filename:'./drawlist.html'
+    }),
     new MiniCSSExtractPlugin({
       linkType: false,
       filename: 'css/style.css',
