@@ -1,7 +1,7 @@
 @use './unit' as *;
 @use 'sass:math';
 
-// padding, margin, border, position
+// font-size, padding, margin, border, position
 
 @mixin fontSB($size: initial, $bold: initial) {
 	font-size: $size;
