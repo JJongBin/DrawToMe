@@ -8,6 +8,7 @@ $root: 16px;
 html {
   font-size: $rootUnit;
   overflow-y: visible;
+  min-width: rem(350px);
 }
 
 // 기본 박스 사이징 설정 -------------------------------------------------------------- /
