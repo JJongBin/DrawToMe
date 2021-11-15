@@ -2,7 +2,7 @@
 
 main{
   // padding-top: rem(100px);
-  // background-color: red;
+  background-color: red;
   max-width: rem(1200px);
   margin: 0 auto;
   @include mobile{
@@ -13,6 +13,7 @@ main{
 // 비디오 첫페이지
 .video{
   &__iframe{
+    z-index: 100;
     position: absolute;
     object-fit: cover;
     width: 100vw;
@@ -23,11 +24,78 @@ main{
   }
 }
 
-.best{
-  margin-top: calc(100vh + 100px);
-}
+
+
 
 // 베스트 드로우
+.best{
+  position: relative;
+  margin-bottom: 1000px;
+  margin-top: calc(100vh + 100px);
+  width: 100%;
+  // height: 500px;
+  background-color: aquamarine;
+  overflow: hidden;
 
+  &-swiper-container{
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    width: calc(100% * 3);
+    transition: 1s;
+  }
 
+  &-swiper{
+    width: 100%;
+    // height:100%;
+  }
+  
+  img{
+    display: block;
+    height: 40vh;
+    width: 100%;
+  }
+}
+.swiper-prev, 
+.swiper-next{
+  appearance: none;
+  border: 2px solid $navy;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.swiper-prev:hover, 
+.swiper-next:hover{
+  background-color: $lightwhite;
+}
+.swiper-next{
+  right: 0;
+}
+
+// .swiper-pagination{
+//   vertical-align: middle;
+//   text-align: center;
+//   input{
+//     display: none;
+//     &:checked{}
+//   }
+//   label{
+//     display: inline-block;
+//     width: rem(10px);
+//     height: rem(10px);
+//     border: 2px solid #666;
+//     background: #fff;
+//     transition: 0.3s;
+//     border-radius: 50%;
+//     cursor: pointer;
+//     margin: 0 rem(5px);
+
+//   }
+// }
 

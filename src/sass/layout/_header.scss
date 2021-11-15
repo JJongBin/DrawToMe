@@ -5,8 +5,9 @@ header{
   background-color: $white;
   width: 100%;
   position: fixed;
-  height: rem(100px);
+  height: rem(80px);
   border-bottom: 1px solid $navy;
+  z-index: 10;
 }
 .header-container{
   white-space: nowrap;
