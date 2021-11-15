@@ -1,7 +1,6 @@
 @use './../utils/' as *;
 
 header{
-  // background-color: $bg;
   background-color: $white;
   width: 100%;
   position: fixed;
@@ -9,18 +8,17 @@ header{
   border-bottom: 1px solid $navy;
 }
 .header-container{
-  // background-color: blue;
+  white-space: nowrap;
   position: absolute;
   display: flex;
   align-items: center;
-  // justify-content: space-between;
   height: 100%;
   width: 100%;
   max-width: rem(1200px);
   left: 50%;
   transform: translateX(-50%);
 }
-  // 1. 로고
+// 1. 로고
 .logo{
   color: $navy;
   font-size: rem(35px);
@@ -30,6 +28,7 @@ header{
     margin: 0 auto;
   }
   @include desktop{
+    // white-space: nowrap;
     padding: rem(24px);
   }
 
@@ -43,37 +42,55 @@ header{
   // 2. 네비게이션
 .navigation{
   flex-grow: 1;
+  
   &-list{
     display: flex;
+    
     li{
       padding: rem(15px);
-      
+      width: 8em;
+      text-align: center;
     }
   }
   @include mobile{
     position: fixed;
     bottom: 0;
+    transform: translateY(100%);
     width: 100%;
-    background-color: yellowgreen;
-    
+    height: rem(46px);
+    background-color: $navy;
+    color: $bg;
+    li{
+      flex-grow: 1;
+    }
   }
   @include desktop{
     font-size:rem(20px);
-    margin-left: 10%;
+    margin-left: 5%;
     
-    li{
-      margin-right: rem(30px);
-    }
+    // li{
+    //   margin-right: rem(30px);
+
+    // }
   }
 }
 
 .member{
   order: 1;
   margin-right: rem(30px);
+  padding: rem(10px);
 
-  &-signup::before{
-    content: " | " ;
-    margin-left: rem(5px);
+  &-login{
     margin-right: rem(5px);
+  }
+  &-signup{
+    margin-left: rem(5px);
+  }
+  @include mobile{
+    position: absolute;
+    top: rem(5px);
+    right: rem(5px);
+    font-size: rem(12px);
+
   }
 }
