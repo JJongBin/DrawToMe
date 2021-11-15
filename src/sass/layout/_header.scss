@@ -1,0 +1,79 @@
+@use './../utils/' as *;
+
+header{
+  // background-color: $bg;
+  background-color: $white;
+  width: 100%;
+  position: fixed;
+  height: rem(100px);
+  border-bottom: 1px solid $navy;
+}
+.header-container{
+  // background-color: blue;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  max-width: rem(1200px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+  // 1. 로고
+.logo{
+  color: $navy;
+  font-size: rem(35px);
+  letter-spacing: rem(-5px);
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  @include mobile{
+    margin: 0 auto;
+  }
+  @include desktop{
+    padding: rem(24px);
+  }
+
+  &__bold{
+    font-weight: 700;
+  }
+}
+
+
+  
+  // 2. 네비게이션
+.navigation{
+  flex-grow: 1;
+  &-list{
+    display: flex;
+    li{
+      padding: rem(15px);
+      
+    }
+  }
+  @include mobile{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: yellowgreen;
+    
+  }
+  @include desktop{
+    font-size:rem(20px);
+    margin-left: 10%;
+    
+    li{
+      margin-right: rem(30px);
+    }
+  }
+}
+
+.member{
+  order: 1;
+  margin-right: rem(30px);
+
+  &-signup::before{
+    content: " | " ;
+    margin-left: rem(5px);
+    margin-right: rem(5px);
+  }
+}
