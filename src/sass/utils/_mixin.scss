@@ -1,0 +1,6 @@
+// footer 아이콘 이미지 정렬
+@mixin footer-img($size : cover, $repeat :no-repeat){
+  display: block;
+  background: url('./../assets/images/icon_sprites.png') $repeat;
+  background-size: $size;
+}
