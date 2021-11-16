@@ -11,7 +11,7 @@
 	// 비디오 container
 	&__iframe-container {
 		background-color: $navy;
-		width: 100vw;
+		width: 100%;
 		height: 100vh;
 	}
 	&__iframe {
@@ -131,35 +131,44 @@
     background-color: $navy;
   }
 }
-	// 진행중인 드로우
 
+	// 진행중인 드로우
 	.main-draw {
 		position: relative;
 		margin-top: rem(70px);
-		margin-bottom: rem(500px);
 		width: 100%;
 		// background-color: skyblue;
 		img {
 			display: block;
 			width: 100%;
+      @include mobile{
+        min-width: rem(220px);
+      }
 		}
-
+    
 		&-title {
-			font-size: rem(25px);
+      font-size: rem(25px);
 			font-weight: 700;
 			margin: rem(14px) 0;
 		}
-
+    
 		&-container {
-			// background-color: yellowgreen;
+      // background-color: yellowgreen;
 			display: flex;
-			justify-content: space-between;
+			// justify-content: space-between;
 			gap: rem(40px);
+      flex-wrap: nowrap;
+      @include mobile{
+        flex-wrap: wrap;
+      }
 		}
-
+    
 		&-item {
-			box-shadow: 0 0 rem(10px) rgb(0 0 0 / 10%);
-
+      box-shadow: 0 0 rem(10px) rgb(0 0 0 / 10%);
+      @include mobile{
+        max-width: calc(50% - 20px);
+        flex-grow: 1;
+      }
 			figure {
 				position: relative;
 			}
@@ -174,11 +183,22 @@
 				height: 100%;
 				color: $bg;
 				background-color: rgba($color: #000000, $alpha: 0.6);
-				p:first-child {
-					text-align: center;
+				p{
+          margin-left:2%;
+        }
+        p:first-child {
+          letter-spacing: rem(-2px);
 					margin-top: 10%;
-					font-size: rem(20px);
+          text-align: left;
+					font-size: rem(24px);
+          font-weight: 700;
 				}
+        p:last-child{
+          margin-top:rem(20px);
+          &::after{
+            content: " 원";
+          }
+        }
 			}
 		}
 		&-more {
