@@ -57,14 +57,24 @@
 		@include flexbox($direction: column, $items: start);
 		em {
 			font-weight: 700;
-			font-size: 1.6em;
-			@include marginY(20px);
+			font-size: 2.4rem;
+			margin-top: rem(50px);
+			margin-bottom: rem(20px);
+			@include mobile{
+				font-size: 1.4rem;
+				margin-top: rem(30px);
+				margin-bottom: rem(10px);
+			}
 		}
 		p{
-			font-size: 1.6em;
-			margin-bottom: rem(20px);
+			display: inline-block;
+			font-size: 2rem;
+			margin-bottom: rem(150px);
+			@include mobile{
+				font-size: 1.2rem;
+				margin-bottom: rem(100px);
+			}
 		}
-	
 	}
 
 	li{
@@ -75,27 +85,28 @@
 		display: none;
 	}
 
-	&__figure:hover + &__detail{
-		display: block;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		color: $lightwhite;
-		font-weight: 700;
-		font-size: 2em;
-		li{
-			@include marginY(150px);
-			display: inline-block;
+	&__figure:hover + 
+	&__detail {
+		@include desktop{
+			display: block;
+			width: 100%;
+			color: $lightwhite;
+			font-weight: 700;
+			font-size: 2rem;
+			@include position($top: 30%);
+			background-color: rgba(0, 0, 0,.6);
+			backdrop-filter: blur(5px);
+			padding: rem(30px);
+			li{
+				display: inline-block;
+				@include marginY(50px);
+			}
+			li:nth-child(n+2)::before{
+				content: '\007C';
+				@include marginX(20px);
 		}
-		li:nth-child(n+2)::before{
-			content: '\007C';
-			@include marginX(10px);
-		}
+
 	}
 
-	&__figure:hover &__link > &__img{
-		filter: blur(10px);
-	}
-
+		}
 }
