@@ -8,7 +8,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;500;700&display=swap" rel="stylesheet">
 
 		<!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+		<script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
 	</head>
 	<body>
 		<!-- 헤더 -->
@@ -51,19 +51,15 @@
 		<!-- 메인페이지 -->
 		<main>
 			<div class="video">
-				<div class="video__container">
 					<figure class="video__iframe-container">
 						<video class="video__iframe" muted playsinline loop autoplay>
 							<source src="./assets/videos/video.webm" type="video/webm">
 							<source src="assets/videos/video.mp4" type="video/mp4">
 						</video>
 					</figure>
-				</div>
 				<div class="video-scroll">
 					<img src="./assets/images/mouse.png" alt="scroll">
 					<small>SCROLL</small>
-					<!-- after fontello
-					-->
 				</div>
 				<div class="video-words">
 					<div class="video-words--medium">새로운</div>
@@ -73,7 +69,7 @@
 
 			<!-- section wrapper -->
 			<div class="main-wrapper">
-				
+
 				<!-- 베스트 드로우 -->
 				<section class="best">
 					<h2 class="sr-only">베스트 드로우</h2>
@@ -109,70 +105,55 @@
 					<button class="swiper-next">&rarr;</button>
 				</section>
 				
-				<!-- 진행중인 드로우 -->
-				<section class="">
-					<h2 class="sr-only">진행중인 드로우</h2>
-					<ul class="">
-						<li>
+				<!-- 새로 나온 드로우 -->
+				<section class="main-draw">
+					<h2 class="main-draw-title">새로 나온 드로우</h2>
+					<ul class="main-draw-container">
+						<li class="main-draw-item">
 							<a href="#">
 								<figure>
-									<img src="" alt="" />
-									<figcaption>
-										<span>덩크 로우 블랙화이트1</span>
-										<span>10000</span>
+									<img src="./assets/images/shoes.jpeg" alt="" />
+									<figcaption class="sr-only">
+										<p>덩크 로우 블랙화이트1</p>
+										<p>10000</p>
 									</figcaption>
 								</figure>
 							</a>
-							<!-- <div>
-								<span> 상세 설명 </span>
-								<span> 지점 </span>
-							</div> -->
 						</li>
-						<li>
+						<li class="main-draw-item">
 							<a href="#">
 								<figure>
-									<img src="" alt="" />
-									<figcaption>
-										<span>덩크 로우 블랙화이트1</span>
-										<span>10000</span>
+									<img src="./assets/images/shoes.jpeg" alt="" />
+									<figcaption class="sr-only">
+										<p>덩크 로우 블랙화이트2</p>
+										<p>10000</p>
 									</figcaption>
 								</figure>
 							</a>
-							<!-- <div>
-								<span> 상세 설명 </span>
-								<span> 지점 </span>
-							</div> -->
 						</li>
-						<li>
+						<li class="main-draw-item">
 							<a href="#">
 								<figure>
-									<img src="" alt="" />
-									<figcaption>
-										<span>덩크 로우 블랙화이트1</span>
-										<span>10000</span>
+									<img src="./assets/images/shoes.jpeg" alt="" />
+									<figcaption class="sr-only">
+										<p>덩크 로우 블랙화이트3</p>
+										<p>10000</p>
 									</figcaption>
 								</figure>
 							</a>
-							<!-- <div>
-								<span> 상세 설명 </span>
-								<span> 지점 </span>
-							</div> -->
 						</li>
-						<li>
+						<li class="main-draw-item">
 							<a href="#">
 								<figure>
-									<img src="" alt="" />
-									<figcaption>덩크 로우 블랙화이트4</figcaption>
-									<!-- hover -->
-								</figure>
+									<img src="./assets/images/shoes.jpeg" alt="" />
+									<figcaption class="sr-only">
+										<p>덩크 로우 블랙화이트4</p>
+										<p>10000</p>
+									</figcaption>
 							</a>
-							<!-- <div>
-								<span> 상세 설명 </span>
-								<span> 지점 </span>
-							</div> -->
 						</li>
 					</ul>
-					<button aria-label="진행중인 드로우로 이동" type="button">더보기</button>
+					<a class="main-draw-more" aria-label="진행중인 드로우로 이동" href="#">더보기</a>
 				</section>
 				<section class="daily">
 					<h2 class="daily__h2 daily__h2--medium">DAILY SHOES</h2>
