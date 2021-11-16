@@ -54,125 +54,127 @@
 
 		<!-- 진행중인 드로우 -->
 		<main>
-			<section class="search">
-				<h2 class="sr-only">상품 검색</h2>
-				<form class="search-form" method="get" action="#">
-					<fieldset>
-						<legend class="sr-only">검색 폼</legend>
-						<label for="search" class="sr-only">상품 검색</label>
-						<input
-							type="search"
-							id="search"
-							class="search__input"
-							name="search"
-							placeholder="상품명 검색"
-							required
-						/>
+			<div class="main-wrapper">
+				<section class="search">
+					<h2 class="sr-only">상품 검색</h2>
+					<form class="search-form" method="get" action="#">
+						<fieldset>
+							<legend class="sr-only">검색 폼</legend>
+							<label for="search" class="sr-only">상품 검색</label>
+							<input
+								type="search"
+								id="search"
+								class="search__input"
+								name="search"
+								placeholder="상품명 검색"
+								required
+							/>
 
-						<button type="submit" class="search-btn"></button>
-					</fieldset>
-				</form>
-			</section>
+							<button type="submit" class="search-btn"></button>
+						</fieldset>
+					</form>
+				</section>
 
-			<section class="draw">
-				<h2 class="draw__title">진행중인 드로우 상품 목록</h2>
-				<button
-					class="draw__button is-active"
-					aria-pressed="true"
-					aria-label="더보기"
-					type="button"
-				>
-					모아보기
+				<section class="draw">
+					<h2 class="draw__title">진행중인 드로우 상품 목록</h2>
+					<button
+						class="draw__button is-active"
+						aria-pressed="true"
+						aria-label="더보기"
+						type="button"
+					>
+						모아보기
+					</button>
+					<ul class="draw__list">
+						<li>
+							<figure class="draw__figure">
+								<a class="draw__link" href="#">
+									<img
+										class="draw__img"
+										src="./assets/images/shoes.jpg"
+										alt="nike shoes"
+									/>
+								</a>
+								<figcaption>
+									<span>덩크 로우 블랙화이트1</span>
+									<span>10000</span>
+								</figcaption>
+							</figure>
+							<div>
+								<span> 상세 설명 </span>
+								<span> 지점 </span>
+							</div>
+						</li>
+						<li>
+							<figure class="draw__figure">
+								<a class="draw__link" href="#">
+									<img
+										class="draw__img"
+										src="./assets/images/shoes.jpg"
+										alt="nike shoes"
+									/>
+								</a>
+								<figcaption>
+									<span>덩크 로우 블랙화이트2</span>
+									<span>10000</span>
+								</figcaption>
+							</figure>
+							<div>
+								<span> 상세 설명 </span>
+								<span> 지점 </span>
+							</div>
+						</li>
+						<li>
+							<figure class="draw__figure">
+								<a class="draw__link" href="#">
+									<img src="./assets/images/shoes.jpg" alt="nike shoes" />
+								</a>
+								<figcaption>
+									<span>덩크 로우 블랙화이트3</span>
+									<span>10000</span>
+								</figcaption>
+							</figure>
+							<div>
+								<span> 상세 설명 </span>
+								<span> 지점 </span>
+							</div>
+						</li>
+						<li>
+							<figure class="draw__figure">
+								<a class="draw__link" href="#">
+									<img src="./assets/images/shoes.jpg" alt="nike shoes" />
+								</a>
+								<figcaption>
+									<span>덩크 로우 블랙화이트4</span>
+									<span>10000</span>
+								</figcaption>
+							</figure>
+							<div>
+								<span> 상세 설명 </span>
+								<span> 지점 </span>
+							</div>
+						</li>
+						<li>
+							<figure class="draw__figure">
+								<a class="draw__link" href="#">
+									<img src="./assets/images/shoes.jpg" alt="nike shoes" />
+								</a>
+								<figcaption>
+									<span>덩크 로우 블랙화이트5</span>
+									<span>10000</span>
+								</figcaption>
+							</figure>
+							<div>
+								<span> 상세 설명 </span>
+								<span> 지점 </span>
+							</div>
+						</li>
+					</ul>
+				</section>
+				<button class="button-top" aria-label="맨위로이동" type="button">
+					&uarr;
 				</button>
-				<ul class="draw__list">
-					<li>
-						<figure class="draw__figure">
-							<a class="draw__link" href="#">
-								<img
-									class="draw__img"
-									src="./assets/images/shoes.jpg"
-									alt="nike shoes"
-								/>
-							</a>
-							<figcaption>
-								<span>덩크 로우 블랙화이트1</span>
-								<span>10000</span>
-							</figcaption>
-						</figure>
-						<div>
-							<span> 상세 설명 </span>
-							<span> 지점 </span>
-						</div>
-					</li>
-					<li>
-						<figure class="draw__figure">
-							<a class="draw__link" href="#">
-								<img
-									class="draw__img"
-									src="./assets/images/shoes.jpg"
-									alt="nike shoes"
-								/>
-							</a>
-							<figcaption>
-								<span>덩크 로우 블랙화이트2</span>
-								<span>10000</span>
-							</figcaption>
-						</figure>
-						<div>
-							<span> 상세 설명 </span>
-							<span> 지점 </span>
-						</div>
-					</li>
-					<li>
-						<figure class="draw__figure">
-							<a class="draw__link" href="#">
-								<img src="./assets/images/shoes.jpg" alt="nike shoes" />
-							</a>
-							<figcaption>
-								<span>덩크 로우 블랙화이트3</span>
-								<span>10000</span>
-							</figcaption>
-						</figure>
-						<div>
-							<span> 상세 설명 </span>
-							<span> 지점 </span>
-						</div>
-					</li>
-					<li>
-						<figure class="draw__figure">
-							<a class="draw__link" href="#">
-								<img src="./assets/images/shoes.jpg" alt="nike shoes" />
-							</a>
-							<figcaption>
-								<span>덩크 로우 블랙화이트4</span>
-								<span>10000</span>
-							</figcaption>
-						</figure>
-						<div>
-							<span> 상세 설명 </span>
-							<span> 지점 </span>
-						</div>
-					</li>
-					<li>
-						<figure class="draw__figure">
-							<a class="draw__link" href="#">
-								<img src="./assets/images/shoes.jpg" alt="nike shoes" />
-							</a>
-							<figcaption>
-								<span>덩크 로우 블랙화이트5</span>
-								<span>10000</span>
-							</figcaption>
-						</figure>
-						<div>
-							<span> 상세 설명 </span>
-							<span> 지점 </span>
-						</div>
-					</li>
-				</ul>
-			</section>
-			<button class="button-top" aria-label="맨위로이동" type="button">
-				&uarr;
-			</button>
+			</div>
 		</main>
 
 		<!-- 푸터 -->
