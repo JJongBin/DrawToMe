@@ -14,7 +14,9 @@
 		padding-right: rem(50px);
 		width: rem(600px);
 		height: rem(50px);
-		width: 100%;
+		@include mobile {
+			width: 100%;
+		}
 	}
 
 	&-btn {
