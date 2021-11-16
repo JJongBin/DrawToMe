@@ -84,16 +84,18 @@
 }
 .swiper-prev,
 .swiper-next {
+  text-indent: rem(9999px);
 	appearance: none;
 	border: none;
 	background: transparent;
 	cursor: pointer;
 	position: absolute;
 	width: rem(40px);
-	height: rem(30px);
+	height: rem(40px);
 	top: 50%;
 	transform: translateY(-50%);
 	opacity: 0.5;
+  background-size: cover;
 	transition: all 0.3s;
 }
 
@@ -191,10 +193,10 @@
 	}
 
 	// 데일리쇼즈, 진행중인 드로우 heading
-.daily__h2 {
+.daily__h2, .main-draw-title {
 	font-weight: 700;
 	font-size: rem(26px);
-	margin: rem(10px);
+	margin: rem(30px) rem(10px);
 }
 
 // 데일리룩
