@@ -1,248 +1,224 @@
 @use './../utils' as *;
 
-
-.main-wrapper{
-  // background-color: blue;
-  max-width: rem(1200px);
-  margin: 0 auto;
+.main-wrapper {
+	max-width: rem(1200px);
+	margin: 0 auto;
 }
 
 // 비디오 첫페이지
-.video{
-  position: relative;
-  // 비디오 container
-  &__iframe-container{
-    background-color: $navy;
-    width: 100%;
-    height:100vh;
-  }
-  &__iframe{
-    width: 100%;
-    height: 100%;
-    opacity:0.5;
-    object-fit: cover;
-  }
-  // 비디오 위 이미지
-  &-scroll{
-    position: absolute;
-    bottom: 4%;
-    right:2%;
-    img{
-      display: block;
-      width: 40px;
-      margin: rem(8px) auto;
-      @include desktop{
-        width: rem(50px);
-      }
-    }
-    small{
-      font-weight: 700;
-      color: $white;
-      font-size: rem(24px);
-      text-shadow: 2px 2px 6px gray;
-    }
-  }
-  // video 위 문자 수정
-  &-words{
-    position: absolute;
-    top:40%;
-    left:5%;
-    color: $white;
-    font-size: rem(60px);
-    letter-spacing: rem(-5px);
-    @include desktop{
-      top:30%;
-      letter-spacing: rem(-10px);
-      font-size: rem(90px);
-    }
-    &--bold{
-      margin-top: rem(10px);
-      font-weight: 700;
-    }
-  }
-}
-
-.main-wrapper{
-  max-width: rem(1200px);
-  margin: 0 auto;
+.video {
+	position: relative;
+	// 비디오 container
+	&__iframe-container {
+		background-color: $navy;
+		width: 100vw;
+		height: 100vh;
+	}
+	&__iframe {
+		width: 100%;
+		height: 100%;
+		opacity: 0.5;
+		object-fit: cover;
+	}
+	// 비디오 위 이미지
+	&-scroll {
+		position: absolute;
+		bottom: 4%;
+		right: 2%;
+		img {
+			display: block;
+			width: 40px;
+			margin: rem(8px) auto;
+			@include desktop {
+				width: rem(50px);
+			}
+		}
+		small {
+			font-weight: 700;
+			color: $white;
+			font-size: rem(24px);
+			text-shadow: 2px 2px 6px gray;
+		}
+	}
+	// video 위 문자 수정
+	&-words {
+		position: absolute;
+		top: 40%;
+		left: 5%;
+		color: $white;
+		font-size: rem(60px);
+		letter-spacing: rem(-10px);
+		@include desktop {
+			top: 30%;
+			font-size: rem(90px);
+		}
+		&--bold {
+			font-weight: 700;
+		}
+	}
 }
 
 // 베스트 드로우
-.best{
-  position: relative;
-  // margin-top: calc(100vh + 100px);
-  width: 100%;
-  overflow: hidden;
+.best {
+	position: relative;
+	// margin-top: calc(100vh + 100px);
+	width: 100%;
+	overflow: hidden;
 
-  &-swiper-container{
-    display: flex;
-    flex-wrap: nowrap;
-    // height: 100%;
-    width: calc(100% * 4);
-    transition: 1s;
-  }
-  &-swiper{
-    width: 100%;
-  }
-  
-  img{
-    display: block;
-    // height: 40vh;
-    width: 100%;
-  }
+	&-swiper-container {
+		display: flex;
+		flex-wrap: nowrap;
+		// height: 100%;
+		width: calc(100% * 4);
+		transition: 1s;
+	}
+	&-swiper {
+		width: 100%;
+	}
+
+	img {
+		display: block;
+		// height: 40vh;
+		width: 100%;
+	}
 }
-.swiper-prev, 
-.swiper-next{
-  appearance: none;
-  border: 2px solid $navy;
-  border-radius: 50%;
-  background: transparent;
-  cursor: pointer;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  z-index: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  line-height: 30px;
-  opacity: .3;
-  transition: all .3s;
+.swiper-prev,
+.swiper-next {
+	appearance: none;
+	border: 2px solid $navy;
+	border-radius: 50%;
+	background: transparent;
+	cursor: pointer;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	z-index: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	line-height: 30px;
+	opacity: 0.3;
+	transition: all 0.3s;
 }
-.swiper-prev:hover, 
-.swiper-next:hover{
-  opacity: 1;
+.swiper-prev:hover,
+.swiper-next:hover {
+	opacity: 1;
 }
-.swiper-prev{
-  left: rem(20px);
+.swiper-prev {
+	left: rem(20px);
 }
-.swiper-next{
-  right: rem(20px);
+.swiper-next {
+	right: rem(20px);
 }
-.swiper-pagination{
-  display: flex;
-  position: absolute;
-  bottom: rem(15px);
-  left: 50%;
-  transform: translateX(-50%);
-  
-  label{
-    width: rem(10px);
-    height: rem(10px);
-    border-radius: 50%;
-    margin: rem(10px);
-    border: 2px solid $navy;
-    cursor: pointer;
-  }
-  input:checked + label{
-    background-color: $navy;
-  }
-}
+.swiper-pagination {
+	display: flex;
+	position: absolute;
+	bottom: rem(15px);
+	left: 50%;
+	transform: translateX(-50%);
 
-// 진행중인 드로우
+	// 진행중인 드로우
 
+	.main-draw {
+		position: relative;
+		margin-top: rem(70px);
+		margin-bottom: rem(500px);
+		width: 100%;
+		// background-color: skyblue;
+		img {
+			display: block;
+			width: 100%;
+		}
 
-.main-draw{
-  position: relative;
-  margin-top: rem(70px);
-  margin-bottom: rem(500px);
-  width: 100%;
-  // background-color: skyblue;
-  img{
-    display: block;
-    width: 100%;
-  }
+		&-title {
+			font-size: rem(25px);
+			font-weight: 700;
+			margin: rem(14px) 0;
+		}
 
-  &-title{
-    font-size: rem(25px);
-    font-weight: 700;
-    margin: rem(14px) 0;
-  }
+		&-container {
+			// background-color: yellowgreen;
+			display: flex;
+			justify-content: space-between;
+			gap: rem(40px);
+		}
 
-  &-container{
-    // background-color: yellowgreen;
-    display: flex;
-    justify-content: space-between;
-    gap: rem(40px);
-  }
+		&-item {
+			box-shadow: 0 0 rem(10px) rgb(0 0 0 / 10%);
 
-  &-item{
-    box-shadow: 0 0 rem(10px) rgb(0 0 0 / 10%);
-    
-    figure{
-      position: relative;
-    }
-    &:hover .sr-only{
-      transition: background-color .3s;
-      z-index: 10;
-      top: 0;
-      left: 0;
-      clip: initial;
-      clip-path: initial;
-      width: 100%;
-      height: 100%;
-      color: $bg;
-      background-color: rgba($color: #000000, $alpha: .6);
-      p:first-child{
-        text-align: center;
-        margin-top: 10%;
-        font-size: rem(20px);
-      }
-    }
+			figure {
+				position: relative;
+			}
+			&:hover .sr-only {
+				transition: background-color 0.3s;
+				z-index: 10;
+				top: 0;
+				left: 0;
+				clip: initial;
+				clip-path: initial;
+				width: 100%;
+				height: 100%;
+				color: $bg;
+				background-color: rgba($color: #000000, $alpha: 0.6);
+				p:first-child {
+					text-align: center;
+					margin-top: 10%;
+					font-size: rem(20px);
+				}
+			}
+		}
+		&-more {
+			position: absolute;
+			top: 0;
+			right: rem(10px);
+			line-height: rem(25px);
+			&::after {
+				content: '> ';
+			}
+		}
+	}
 
-  }
-  &-more{
-    position: absolute;
-    top: 0;
-    right: rem(10px);
-    line-height: rem(25px);
-    &::after{
-      content: '> ';
-    }
-  }
-}
+	// 데일리쇼즈, 진행중인 드로우 heading
+	.daily__h2 {
+		font-weight: 700;
+		font-size: rem(26px);
+		margin: rem(10px);
+	}
 
-// 데일리쇼즈, 진행중인 드로우 heading
-.daily__h2{
-  font-weight: 700;
-  font-size: rem(26px);
-  margin:rem(10px);
-
-}
-
-// 데일리룩
-.daily{
-  &__ul{
-    display: flex;
-    flex-wrap: nowrap;
-    // justify-content: center;
-    justify-items: flex-start;
-    // li 요소
-    li{
-      position: relative;
-      width: rem(240px);
-      height:rem(280px);
-      overflow: hidden;
-      margin-left:rem(10px);
-      border-radius: rem(30px);
-      @include mobile{
-        min-width: rem(150px);
-      }
-      // 인스타그램 아이디
-      span{
-        color: $black;
-        position: absolute;
-        bottom: 5%;
-        left:5%;
-      }
-      figure{
-        width: 100%;
-        height:100%;
-      }
-    }
-  }
-  &__img{
-    width: 100%;
-    height:100%;
-    object-fit: cover;
-  }
+	// 데일리룩
+	.daily {
+		&__ul {
+			display: flex;
+			flex-wrap: nowrap;
+			// justify-content: center;
+			justify-items: flex-start;
+			// li 요소
+			li {
+				position: relative;
+				width: rem(240px);
+				height: rem(280px);
+				overflow: hidden;
+				margin-left: rem(10px);
+				border-radius: rem(30px);
+				@include mobile {
+					min-width: rem(150px);
+				}
+				// 인스타그램 아이디
+				span {
+					color: $black;
+					position: absolute;
+					bottom: 5%;
+					left: 5%;
+				}
+				figure {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+		&__img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 }
