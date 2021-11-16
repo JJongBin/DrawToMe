@@ -16,9 +16,14 @@
 		height: rem(50px);
 		@include border;
 		border-radius: rem(5px);
+		transition: border 0.3s ease-in-out;
 		@include mobile {
 			width: 100%;
 		}
+	}
+
+	&__input:hover {
+		@include border($px: 3px, $color: black);
 	}
 	&__input:focus {
 		@include border($px: 3px, $color: black);
@@ -35,6 +40,7 @@
 	}
 
 	fieldset {
+		position: relative;
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
