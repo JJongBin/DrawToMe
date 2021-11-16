@@ -93,29 +93,31 @@
 }
 .swiper-prev, 
 .swiper-next{
+  overflow: hidden;
+  text-indent: rem(2000px);
   appearance: none;
-  border: 2px solid $navy;
-  border-radius: 50%;
-  background: transparent;
+  border:none;
   cursor: pointer;
   position: absolute;
-  width: 30px;
-  height: 30px;
-  z-index: 0;
+  width: rem(40px);
+  height: rem(40px);
   top: 50%;
-  transform: translateY(-50%);
-  line-height: 30px;
-  opacity: .3;
+  opacity:0.5;
   transition: all .3s;
+  transform: translateY(-50%);
+  background: transparent;
+  background-size: cover;
 }
 .swiper-prev:hover, 
 .swiper-next:hover{
   opacity: 1;
 }
 .swiper-prev{
+  background-image:url('./../assets/images/prev.png');
   left: rem(20px);
 }
 .swiper-next{
+  background-image:url('./../assets/images/next.png');
   right: rem(20px);
 }
 .swiper-pagination{
