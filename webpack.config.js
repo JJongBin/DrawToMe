@@ -93,7 +93,7 @@ module.exports = {
     }),
     new MiniCSSExtractPlugin({
       linkType: false,
-      filename: 'css/style.css',
+      filename: './css/style.css',
     }),
     new CopyPlugin({
       patterns: [
