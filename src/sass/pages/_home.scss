@@ -22,24 +22,39 @@
 	}
 	// 비디오 위 이미지
 	&-scroll {
-		position: absolute;
-		bottom: 4%;
-		right: 2%;
+    position: absolute;
+    left : 50%;
+    transform: translateX(-50%);
+    animation: scrollmove 1.5s ease-in infinite both;
 		img {
-			display: block;
-			width: 40px;
+      display: block;
+			width: 30px;
 			margin: rem(8px) auto;
 			@include desktop {
-				width: rem(50px);
+        width: rem(40px);
 			}
 		}
 		small {
-			font-weight: 700;
+      font-weight: 700;
 			color: $white;
-			font-size: rem(24px);
+			font-size: rem(20px);
 			text-shadow: 2px 2px 6px gray;
 		}
 	}
+  // 스크롤바 animation
+  @keyframes scrollmove  {
+    0%{
+      bottom: 4%;
+    }
+    50%{
+      bottom: 3%;
+    }
+    to{
+      bottom: 4%;
+    }
+  }
+  
+
 	// video 위 문자 수정
 	&-words {
 		position: absolute;
@@ -134,8 +149,9 @@
 
 	// 진행중인 드로우
 	.main-draw {
+    padding:rem(10px);
 		position: relative;
-		margin-top: rem(70px);
+    @include marginY(70px);
 		width: 100%;
 		// background-color: skyblue;
 		img {
@@ -203,7 +219,7 @@
 		}
 		&-more {
 			position: absolute;
-			top: 0;
+			top: 20px;
 			right: rem(10px);
 			line-height: rem(25px);
 			&::after {
@@ -216,7 +232,6 @@
 .daily__h2, .main-draw-title {
 	font-weight: 700;
 	font-size: rem(26px);
-	margin: rem(30px) rem(10px);
 }
 
 // 데일리룩
