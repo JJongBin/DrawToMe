@@ -46,13 +46,35 @@ header {
 		display: flex;
 
 		a {
-			text-align: center;
-			padding: rem(15px);
+      text-align: center;
+      position: relative;
+      padding-top: rem(10px);
+      padding-bottom: rem(7px);
+      padding-right: rem(5px);
+      padding-left: rem(5px);
+      margin: rem(10px);
 			font-size: rem(20px);
-			font-weight: 400;
+      font-weight: 400;
+      transition: all .4s;
 			&:hover {
 				font-weight: 700;
-			}
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        // opacity: 0;
+        height: rem(1px);
+        background: $navy;
+        transition: all .4s;
+      }
+      &:hover::after{
+        // opacity: 1;
+        width: 100%;
+      }
 		}
 	}
 	@include mobile {
@@ -71,7 +93,8 @@ header {
 			a {
 				display: block;
 				font-size: rem(16px);
-			}
+        
+      }
 		}
 	}
 	@include desktop {

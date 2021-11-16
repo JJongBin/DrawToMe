@@ -213,10 +213,27 @@
 			position: absolute;
 			top: rem(50px);
 			right: rem(10px);
-			line-height: rem(25px);
-			&::after {
+      line-height: rem(25px);
+      
+			&::before {
 				content: '> ';
-			}
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        // opacity: 0;
+        height: rem(1px);
+        background: $navy;
+        transition: all .4s;
+      }
+      &:hover::after{
+        // opacity: 1;
+        width: 100%;
+      }
 		}
 	}
 
