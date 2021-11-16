@@ -1,12 +1,17 @@
 @use './../utils' as *;
 
 .draw {
-	margin-top: rem(10px);
-
 	&__title {
 		display: inline-block;
 		width: 100%;
-		padding: rem(50px) rem(20px) rem(20px) 0;
+		@include desktop {
+			padding: 0 rem(20px) rem(80px) 0;
+		}
+		@include mobile {
+			display: block;
+			padding: rem(50px) rem(20px) rem(20px) rem(20px);
+			text-align: center;
+		}
 		@include fontSB($size: rem(30px), $bold: 700);
 	}
 
@@ -52,4 +57,61 @@
 			}
 		}
 	}
+
+	&__figcaption{
+		@include flexbox($direction: column, $items: start);
+		em {
+			font-weight: 700;
+			font-size: 2.4rem;
+			margin-top: rem(50px);
+			margin-bottom: rem(20px);
+			@include mobile{
+				font-size: 1.4rem;
+				margin-top: rem(30px);
+				margin-bottom: rem(10px);
+			}
+		}
+		p{
+			display: inline-block;
+			font-size: 2rem;
+			margin-bottom: rem(150px);
+			@include mobile{
+				font-size: 1.2rem;
+				margin-bottom: rem(100px);
+			}
+		}
+	}
+
+	li{
+		position: relative;
+	}
+
+	&__detail{
+		display: none;
+	}
+
+	&__figure:hover + 
+	&__detail {
+		@include desktop{
+			display: block;
+			width: 100%;
+			color: $lightwhite;
+			font-weight: 700;
+			font-size: 2rem;
+			@include position($top: 30%);
+			background-color: rgba(0, 0, 0,.6);
+			backdrop-filter: blur(5px);
+			padding: rem(30px);
+			li{
+				display: inline-block;
+				@include marginY(50px);
+			}
+			li:nth-child(n+2)::before{
+				content: '\007C';
+				@include marginX(20px);
+		}
+
+	}
+
+		}
 }
