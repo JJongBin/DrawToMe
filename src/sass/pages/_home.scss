@@ -180,7 +180,7 @@
 				position: relative;
 			}
 			&:hover .sr-only {
-				transition: background-color 0.3s;
+				transition: background-color 0.5s;
 				z-index: 10;
 				top: 0;
 				left: 0;
@@ -211,7 +211,7 @@
 		}
 		&-more {
 			position: absolute;
-			top: 20px;
+			top: rem(50px);
 			right: rem(10px);
 			line-height: rem(25px);
 			&::after {
@@ -225,6 +225,10 @@
 	font-weight: 700;
   font-size: rem(35px);
   margin: rem(14px) 0;
+  @include mobile{
+    margin-left: rem(10px);
+    margin-right: rem(10px);
+  }
 }
 
 .daily__h2::after{
@@ -254,6 +258,7 @@
 
 // 데일리룩
 .daily{
+  padding: rem(10px);
   &__container{
     overflow: hidden;
     flex-wrap: nowrap;
@@ -291,6 +296,10 @@
         width: 100%;
         height:100%;
       }
+    }
+
+    @include mobile{
+      padding-right: rem(20px);
     }
   }
   &__img{
