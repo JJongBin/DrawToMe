@@ -79,7 +79,7 @@
     flex-wrap: nowrap;
     // height: 100%;
     width: calc(100% * 4);
-    transition: 1s;
+    // transition: 1s;
   }
   &-swiper{
     width: 100%;
@@ -91,32 +91,32 @@
     width: 100%;
   }
 }
-.swiper-prev, 
-.swiper-next{
-  appearance: none;
-  border: 2px solid $navy;
-  border-radius: 50%;
-  background: transparent;
-  cursor: pointer;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  z-index: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  line-height: 30px;
-  opacity: .3;
-  transition: all .3s;
+.swiper-prev,
+.swiper-next {
+	appearance: none;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	position: absolute;
+	width: rem(40px);
+	height: rem(30px);
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 0.5;
+	transition: all 0.3s;
 }
-.swiper-prev:hover, 
-.swiper-next:hover{
-  opacity: 1;
-}
+
 .swiper-prev{
+  // background-image:url('./../assets/images/prev.png');
   left: rem(20px);
 }
 .swiper-next{
+  // background-image:url('./../assets/images/next.png');
   right: rem(20px);
+}
+.swiper-prev:hover,
+.swiper-next:hover {
+	opacity: 1;
 }
 .swiper-pagination{
   display: flex;
@@ -211,22 +211,32 @@
 
 // 데일리룩
 .daily{
+  &__container{
+    overflow: hidden;
+    border: 1px solid red;
+    flex-wrap: nowrap;
+    margin-bottom: 200px;
+    transition: all .9s;
+  }
   &__ul{
     display: flex;
-    flex-wrap: nowrap;
+    gap: rem(20px);
     // justify-content: center;
     justify-items: flex-start;
+    transition: all .9s;
+
     // li 요소
     li{
+      border: 1px solid black;
       position: relative;
-      width: rem(240px);
-      height:rem(280px);
-      overflow: hidden;
-      margin-left:rem(10px);
+      min-width: rem(240px);
+      min-height:rem(280px);
+      // margin-left:rem(30px);
       border-radius: rem(30px);
       @include mobile{
         min-width: rem(150px);
       }
+
       // 인스타그램 아이디
       span{
         color: $black;
