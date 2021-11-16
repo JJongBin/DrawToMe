@@ -1,5 +1,6 @@
 @use './../utils' as *;
 
+// draw 블록
 .draw {
 	position: relative;
 	@include desktop {
@@ -33,6 +34,10 @@
 		@include mobile {
 			display: none;
 		}
+		&.is-active {
+			background-color: black;
+			color: white;
+		}
 	}
 	&__button:hover {
 		@include border($color: white);
@@ -47,10 +52,14 @@
 		}
 		@include desktop {
 			@include gridbox();
+			&.is-active {
+				@include gridbox($column-count: 3);
+			}
 		}
 	}
 
 	&__link {
+		position: relative;
 		display: inline-block;
 		@include mobile {
 			img {
@@ -89,28 +98,43 @@
 		}
 	}
 
-	li {
-		position: relative;
-	}
-
 	&__detail {
 		display: none;
 	}
 
-	&__link:hover {
-		@include desktop {
-			// @include fontSB($size:rem(32px), $bold)
-			// @include position($top: 10%);
-			background-color: rgba(0, 0, 0, 0.6);
-			backdrop-filter: blur(5px);
-			// padding: rem(30px);
+	&__link:hover &__detail {
+		display: block;
+		background-color: rgba($color: $black, $alpha: 0.6);
+		width: 100%;
+		height: 100%;
+		@include paddingY(50px);
+		@include paddingX(10px);
+		position: absolute;
+		top: 0;
+		color: white;
+		font-size: 1.4rem;
+		@include mobile {
+			font-size: 1.2rem;
+			@include paddingY(70px);
+		}
+
+		.detail-list {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
 			li {
 				display: inline-block;
 				@include marginY(50px);
+				@include mobile {
+					@include marginY(30px);
+				}
 			}
 			li:nth-child(n + 2)::before {
 				content: '\007C';
 				@include marginX(20px);
+				@include mobile {
+					@include marginX(10px);
+				}
 			}
 		}
 	}
