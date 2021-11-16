@@ -91,7 +91,7 @@ try{
       cntClone++;
     }
     dailyBox.style.transition = `all 1s`;
-    dailyBox.style.transform = `translateX(${-dailyIdx*(showSize+22)}px)`;
+    dailyBox.style.transform = `translateX(${-dailyIdx*(showSize+20)}px)`;
     if(dailyIdx >= len){
       dailyIdx = 0;
       setTimeout(() => {
@@ -101,7 +101,7 @@ try{
     }
   };
   
-  // setInterval(dailyMove, 2000);
+  setInterval(dailyMove, 2000);
 }catch(e){
   console.log(e);
 };
