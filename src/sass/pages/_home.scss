@@ -59,29 +59,30 @@
 }
 
 // 베스트 드로우
-.best {
-	position: relative;
-	// margin-top: calc(100vh + 100px);
-	width: 100%;
-	overflow: hidden;
+.best{
+  position: relative;
+  // margin-top: calc(100vh + 100px);
+  width: 100%;
+  overflow: hidden;
 
-	&-swiper-container {
-		display: flex;
-		flex-wrap: nowrap;
-		// height: 100%;
-		width: calc(100% * 4);
-		transition: 1s;
-	}
-	&-swiper {
-		width: 100%;
-	}
-
-	img {
-		display: block;
-		// height: 40vh;
-		width: 100%;
-	}
+  &-swiper-container{
+    display: flex;
+    flex-wrap: nowrap;
+    // height: 100%;
+    width: calc(100% * 4);
+    transition: 1s;
+  }
+  &-swiper{
+    width: 100%;
+  }
+  
+  img{
+    display: block;
+    // height: 40vh;
+    width: 100%;
+  }
 }
+
 .swiper-prev,
 .swiper-next {
 	appearance: none;
@@ -99,15 +100,17 @@
 	opacity: 0.3;
 	transition: all 0.3s;
 }
+
+.swiper-prev{
+  background-image:url('./../assets/images/prev.png');
+  left: rem(20px);
+}
+.swiper-next{
+  background-image:url('./../assets/images/next.png');
+  right: rem(20px);
 .swiper-prev:hover,
 .swiper-next:hover {
 	opacity: 1;
-}
-.swiper-prev {
-	left: rem(20px);
-}
-.swiper-next {
-	right: rem(20px);
 }
 .swiper-pagination {
 	display: flex;
@@ -115,7 +118,7 @@
 	bottom: rem(15px);
 	left: 50%;
 	transform: translateX(-50%);
-
+}
 	// 진행중인 드로우
 
 	.main-draw {
@@ -178,11 +181,11 @@
 	}
 
 	// 데일리쇼즈, 진행중인 드로우 heading
-	.daily__h2 {
-		font-weight: 700;
-		font-size: rem(26px);
-		margin: rem(10px);
-	}
+.daily__h2 {
+	font-weight: 700;
+	font-size: rem(26px);
+	margin: rem(10px);
+}
 
 	// 데일리룩
 	.daily {
