@@ -107,15 +107,13 @@
 		background-color: rgba($color: $black, $alpha: 0.6);
 		width: 100%;
 		height: 100%;
-		@include paddingY(50px);
-		@include paddingX(10px);
+		padding: 10%;
 		position: absolute;
 		top: 0;
 		color: white;
-		font-size: 1.4rem;
+		font-size: 100%;
 		@include mobile {
-			font-size: 1.2rem;
-			@include paddingY(70px);
+			padding: 5%;
 		}
 
 		.detail-list {
@@ -124,16 +122,16 @@
 			white-space: nowrap;
 			li {
 				display: inline-block;
-				@include marginY(50px);
+				margin-top: 10%;
 				@include mobile {
-					@include marginY(30px);
+					 margin-top: 5%;
 				}
 			}
 			li:nth-child(n + 2)::before {
 				content: '\007C';
-				@include marginX(20px);
+				margin-right: 2%;
 				@include mobile {
-					@include marginX(10px);
+					margin-right: 1%;
 				}
 			}
 		}
