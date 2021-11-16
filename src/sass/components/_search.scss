@@ -14,9 +14,14 @@
 		padding-right: rem(50px);
 		width: rem(600px);
 		height: rem(50px);
+		@include border;
+		border-radius: rem(5px);
 		@include mobile {
 			width: 100%;
 		}
+	}
+	&__input:focus {
+		@include border($px: 3px, $color: black);
 	}
 
 	&-btn {
@@ -26,7 +31,7 @@
 		height: rem(20px);
 		width: rem(20px);
 		position: absolute;
-		right: 2%;
+		right: rem(10px);
 	}
 
 	fieldset {

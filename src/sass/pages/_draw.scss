@@ -1,8 +1,6 @@
 @use './../utils' as *;
 
 .draw {
-	margin-top: rem(10px);
-
 	&__title {
 		display: inline-block;
 		width: 100%;
