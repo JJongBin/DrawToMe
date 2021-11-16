@@ -4,7 +4,14 @@
 	&__title {
 		display: inline-block;
 		width: 100%;
-		padding: rem(50px) rem(20px) rem(20px) 0;
+		@include desktop {
+			padding: 0 rem(20px) rem(80px) 0;
+		}
+		@include mobile {
+			display: block;
+			padding: rem(50px) rem(20px) rem(20px) rem(20px);
+			text-align: center;
+		}
 		@include fontSB($size: rem(30px), $bold: 700);
 	}
 

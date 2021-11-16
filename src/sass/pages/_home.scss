@@ -1,139 +1,130 @@
 @use './../utils' as *;
 
-
-.main-wrapper{
-  background-color: blue;
-  max-width: rem(1200px);
-  margin: 0 auto;
+.main-wrapper {
+	max-width: rem(1200px);
+	margin: 0 auto;
 }
 
 // 비디오 첫페이지
-.video{
-  position: relative;
-  // 비디오 container
-  &__iframe-container{
-    background-color: $navy;
-    width: 100vw;
-    height:100vh;
-  }
-  &__iframe{
-    width: 100%;
-    height: 100%;
-    opacity:0.5;
-    object-fit: cover;
-  }
-  // 비디오 위 이미지
-  &-scroll{
-    position: absolute;
-    bottom: 4%;
-    right:2%;
-    img{
-      display: block;
-      width: 40px;
-      margin: rem(8px) auto;
-      @include desktop{
-        width: rem(50px);
-      }
-    }
-    small{
-      font-weight: 700;
-      color: $white;
-      font-size: rem(24px);
-      text-shadow: 2px 2px 6px gray;
-    }
-  }
-  // video 위 문자 수정
-  &-words{
-    position: absolute;
-    top:40%;
-    left:5%;
-    color: $white;
-    font-size: rem(60px);
-    letter-spacing: rem(-10px);
-    @include desktop{
-      top:30%;
-      font-size: rem(90px);
-    }
-    &--bold{
-      font-weight: 700;
-    }
-  }
-
+.video {
+	position: relative;
+	// 비디오 container
+	&__iframe-container {
+		background-color: $navy;
+		width: 100vw;
+		height: 100vh;
+	}
+	&__iframe {
+		width: 100%;
+		height: 100%;
+		opacity: 0.5;
+		object-fit: cover;
+	}
+	// 비디오 위 이미지
+	&-scroll {
+		position: absolute;
+		bottom: 4%;
+		right: 2%;
+		img {
+			display: block;
+			width: 40px;
+			margin: rem(8px) auto;
+			@include desktop {
+				width: rem(50px);
+			}
+		}
+		small {
+			font-weight: 700;
+			color: $white;
+			font-size: rem(24px);
+			text-shadow: 2px 2px 6px gray;
+		}
+	}
+	// video 위 문자 수정
+	&-words {
+		position: absolute;
+		top: 40%;
+		left: 5%;
+		color: $white;
+		font-size: rem(60px);
+		letter-spacing: rem(-10px);
+		@include desktop {
+			top: 30%;
+			font-size: rem(90px);
+		}
+		&--bold {
+			font-weight: 700;
+		}
+	}
 }
-
 
 // 베스트 드로우
-.best{
-  position: relative;
-  // margin-top: calc(100vh + 100px);
-  width: 100%;
-  overflow: hidden;
+.best {
+	position: relative;
+	// margin-top: calc(100vh + 100px);
+	width: 100%;
+	overflow: hidden;
 
-  &-swiper-container{
-    display: flex;
-    flex-wrap: nowrap;
-    // height: 100%;
-    width: calc(100% * 4);
-    transition: 1s;
-  }
-  &-swiper{
-    width: 100%;
-  }
-  
-  img{
-    display: block;
-    // height: 40vh;
-    width: 100%;
-  }
-}
-.swiper-prev, 
-.swiper-next{
-  appearance: none;
-  border: 2px solid $navy;
-  border-radius: 50%;
-  background: transparent;
-  cursor: pointer;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  z-index: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  line-height: 30px;
-  opacity: .3;
-  transition: all .3s;
-}
-.swiper-prev:hover, 
-.swiper-next:hover{
-  opacity: 1;
-}
-.swiper-prev{
-  left: rem(20px);
-}
-.swiper-next{
-  right: rem(20px);
-}
-.swiper-pagination{
-  display: flex;
-  position: absolute;
-  bottom: rem(15px);
-  left: 50%;
-  transform: translateX(-50%);
-  
-  label{
-    width: rem(10px);
-    height: rem(10px);
-    border-radius: 50%;
-    margin: rem(10px);
-    border: 2px solid $navy;
-    cursor: pointer;
-  }
-  input:checked + label{
-    background-color: $navy;
-  }
-}
+	&-swiper-container {
+		display: flex;
+		flex-wrap: nowrap;
+		// height: 100%;
+		width: calc(100% * 4);
+		transition: 1s;
+	}
+	&-swiper {
+		width: 100%;
+	}
 
+	img {
+		display: block;
+		// height: 40vh;
+		width: 100%;
+	}
+}
+.swiper-prev,
+.swiper-next {
+	appearance: none;
+	border: 2px solid $navy;
+	border-radius: 50%;
+	background: transparent;
+	cursor: pointer;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	z-index: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	line-height: 30px;
+	opacity: 0.3;
+	transition: all 0.3s;
+}
+.swiper-prev:hover,
+.swiper-next:hover {
+	opacity: 1;
+}
+.swiper-prev {
+	left: rem(20px);
+}
+.swiper-next {
+	right: rem(20px);
+}
+.swiper-pagination {
+	display: flex;
+	position: absolute;
+	bottom: rem(15px);
+	left: 50%;
+	transform: translateX(-50%);
 
-
-
-
+	label {
+		width: rem(10px);
+		height: rem(10px);
+		border-radius: 50%;
+		margin: rem(10px);
+		border: 2px solid $navy;
+		cursor: pointer;
+	}
+	input:checked + label {
+		background-color: $navy;
+	}
+}
