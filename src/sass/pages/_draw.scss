@@ -1,28 +1,35 @@
 @use './../utils' as *;
 
 .draw {
+	position: relative;
+	@include desktop {
+		margin: 0 rem(30px);
+	}
+
+	@include mobile {
+		margin: 0 rem(20px);
+		display: block;
+	}
+
 	&__title {
 		display: inline-block;
 		width: 100%;
 		@include desktop {
-			padding: 0 rem(20px) rem(80px) 0;
+			padding: rem(60px) rem(20px) rem(40px) 0;
+			@include fontSB($size: rem(40px), $bold: 700);
 		}
 		@include mobile {
-			display: block;
-			padding: rem(50px) rem(20px) rem(20px) rem(20px);
-			text-align: center;
+			@include fontSB($size: rem(30px), $bold: 700);
+			padding: rem(60px) rem(20px) rem(20px) 0;
 		}
-		@include fontSB($size: rem(30px), $bold: 700);
 	}
 
 	&__button {
-		@include desktop {
-			@include position($right: 0, $top: rem(20px));
-			margin-top: rem(30px);
-			padding: rem(10px);
-			border-radius: rem(3px);
-			@include border;
-		}
+		@include border;
+		@include position($right: 0, $top: rem(60px));
+		border-radius: rem(3px);
+		width: rem(50px);
+		height: rem(50px);
 		@include mobile {
 			display: none;
 		}
@@ -31,7 +38,7 @@
 		@include border($color: white);
 		color: white;
 		background: black;
-		transition: all 0.3s ease-in-out;
+		transition: all 0.2s ease-in-out;
 	}
 
 	&__list {
@@ -58,60 +65,58 @@
 		}
 	}
 
-	&__figcaption{
+	&__figcaption {
 		@include flexbox($direction: column, $items: start);
 		em {
 			font-weight: 700;
 			font-size: 2.4rem;
 			margin-top: rem(50px);
 			margin-bottom: rem(20px);
-			@include mobile{
+			@include mobile {
 				font-size: 1.4rem;
 				margin-top: rem(30px);
 				margin-bottom: rem(10px);
 			}
 		}
-		p{
+		p {
 			display: inline-block;
 			font-size: 2rem;
 			margin-bottom: rem(150px);
-			@include mobile{
+			@include mobile {
 				font-size: 1.2rem;
 				margin-bottom: rem(100px);
 			}
 		}
 	}
 
-	li{
+	li {
 		position: relative;
 	}
 
-	&__detail{
+	&__detail {
 		display: none;
 	}
 
-	&__figure:hover + 
-	&__detail {
-		@include desktop{
+	&__figure:hover + &__detail {
+		@include desktop {
 			display: block;
 			width: 100%;
 			color: $lightwhite;
 			font-weight: 700;
 			font-size: 2rem;
+			// @include fontSB($size:rem(32px), $bold)
 			@include position($top: 30%);
-			background-color: rgba(0, 0, 0,.6);
+			background-color: rgba(0, 0, 0, 0.6);
 			backdrop-filter: blur(5px);
 			padding: rem(30px);
-			li{
+			li {
 				display: inline-block;
 				@include marginY(50px);
 			}
-			li:nth-child(n+2)::before{
+			li:nth-child(n + 2)::before {
 				content: '\007C';
 				@include marginX(20px);
+			}
 		}
-
 	}
-
-		}
 }
