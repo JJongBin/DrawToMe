@@ -103,9 +103,9 @@
 			width: 100%;
 			color: $lightwhite;
 			font-weight: 700;
-			font-size: 2rem;
+			font-size: 1.4rem;
 			// @include fontSB($size:rem(32px), $bold)
-			@include position($top: 30%);
+			@include position($top: 10%);
 			background-color: rgba(0, 0, 0, 0.6);
 			backdrop-filter: blur(5px);
 			padding: rem(30px);
