@@ -76,7 +76,7 @@
 // 베스트 드로우
 .best{
   position: relative;
-  // margin-top: calc(100vh + 100px);
+  margin-top: rem(70px);
   width: 100%;
   overflow: hidden;
 
@@ -153,7 +153,6 @@
 		position: relative;
     @include marginY(70px);
 		width: 100%;
-		// background-color: skyblue;
 		img {
 			display: block;
 			width: 100%;
@@ -162,16 +161,8 @@
       }
 		}
     
-		&-title {
-      font-size: rem(25px);
-			font-weight: 700;
-			margin: rem(14px) 0;
-		}
-    
 		&-container {
-      // background-color: yellowgreen;
 			display: flex;
-			// justify-content: space-between;
 			gap: rem(40px);
       flex-wrap: nowrap;
       @include mobile{
@@ -189,7 +180,7 @@
 				position: relative;
 			}
 			&:hover .sr-only {
-				transition: background-color 0.3s;
+				transition: background-color 0.5s;
 				z-index: 10;
 				top: 0;
 				left: 0;
@@ -198,11 +189,12 @@
 				width: 100%;
 				height: 100%;
 				color: $bg;
-				background-color: rgba($color: #000000, $alpha: 0.6);
+				background-color: rgba($color: #000000, $alpha: 0.5);
 				p{
           margin-left:2%;
         }
         p:first-child {
+          line-height: 1.5;
           letter-spacing: rem(-2px);
 					margin-top: 10%;
           text-align: left;
@@ -219,23 +211,71 @@
 		}
 		&-more {
 			position: absolute;
-			top: 20px;
+			top: rem(50px);
 			right: rem(10px);
-			line-height: rem(25px);
-			&::after {
+      line-height: rem(25px);
+      
+			&::before {
 				content: '> ';
-			}
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        // opacity: 0;
+        height: rem(1px);
+        background: $navy;
+        transition: all .4s;
+      }
+      &:hover::after{
+        // opacity: 1;
+        width: 100%;
+      }
 		}
 	}
 
 	// 데일리쇼즈, 진행중인 드로우 heading
-.daily__h2, .main-draw-title {
+.daily__h2, .main-draw-title, .best-title {
 	font-weight: 700;
-	font-size: rem(26px);
+  font-size: rem(35px);
+  margin: rem(14px) 0;
+  @include mobile{
+    margin-left: rem(10px);
+    margin-right: rem(10px);
+  }
+}
+
+.daily__h2::after{
+  content:"데일리 룩";
+  padding-top: rem(5px);
+  display: block;
+  font-size: rem(20px);
+  font-weight: 500;
+  color: $lightblue;
+}
+.main-draw-title::after{
+  content:"새로 나온 드로우";
+  padding-top: rem(5px);
+  display: block;
+  font-size: rem(20px);
+  font-weight: 500;
+  color: $lightblue;
+}
+.best-title::after{
+  content:"인기 드로우";
+  padding-top: rem(5px);
+  display: block;
+  font-size: rem(20px);
+  font-weight: 500;
+  color: $lightblue;
 }
 
 // 데일리룩
 .daily{
+  padding: rem(10px);
   &__container{
     overflow: hidden;
     flex-wrap: nowrap;
@@ -245,24 +285,35 @@
   &__ul{
     display: flex;
     gap: rem(20px);
-    // justify-content: center;
     justify-items: flex-start;
-    // transition: all .9s;
+
+    @include mobile{
+      gap: rem(15px);
+    }
 
     // li 요소
     li{
       position: relative;
-      min-width: rem(240px);
-      min-height:rem(280px);
-      // margin-left:rem(30px);
+      box-sizing: border-box;
+      // min-width: rem(240px);
+      min-width: calc((100% / 5) - (80px / 5));
+      min-height: rem(280px);
       border-radius: rem(30px);
+      overflow: hidden;
+      @media (max-width: 1000px) {
+        min-width: calc((100% / 4) - (60px / 4));
+      }
       @include mobile{
-        min-width: rem(150px);
+        min-width: calc((100% / 3) - (30px / 3));
+        // min-width: rem(150px);
       }
 
       // 인스타그램 아이디
       span{
-        color: $black;
+        color: $white;
+        font-weight: 700;
+        font-size: rem(18px);
+        text-shadow: 1px 1px 0 0 #000000;
         position: absolute;
         bottom: 5%;
         left:5%;

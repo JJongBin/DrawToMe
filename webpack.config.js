@@ -91,6 +91,10 @@ module.exports = {
       template:'./src/drawlist.html',
       filename:'./drawlist.html'
     }),
+    new HtmlWebpackPlugin({
+      template:'./src/detail.html',
+      filename:'./detail.html'
+    }),
     new MiniCSSExtractPlugin({
       linkType: false,
       filename: './css/style.css',
