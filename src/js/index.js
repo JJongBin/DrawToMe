@@ -71,55 +71,37 @@ try{
 // daily look
 try{
   const dailyBox = document.querySelector('.daily__ul');
-  const dailyContainer = document.querySelector('.daily__container');
   const len = dailyBox.children.length;
-  
   
   let showSize = dailyBox.children[0].clientWidth;  // 아이템 하나의 초기값
   let showItem = Math.ceil(dailyBox.clientWidth / (showSize+20));
   
-  // const dailyBoxWidth = (showSize + 20) * len;
-  // console.log(dailyBoxWidth);
-  // const target = dailyBoxWidth - dailyBox.clientWidth;
-  // console.log(target);
-  
   window.onresize = () => {   // 반응형이므로 사이즈 변경 방지
     showSize = dailyBox.children[0].clientWidth;
-    showItem = Math.ceil(dailyBox.clientWidth / (showSize+20))
+    showItem = Math.ceil(dailyBox.clientWidth / (showSize+20));
   };
-  
-  
   
   let dailyIdx = 0;
-  let dailyCnt = 0;
-  let cnt = 0;
+  let cntClone = 0;
   const dailyMove = () => {
     dailyIdx++;
-    // cnt++;
-    // console.log(showItem, len-dailyIdx)
-    if(showItem > len-dailyIdx){
-      console.log(showItem-len+dailyIdx-1)
-      // console.log(dailyContainer.children[showItem-len+dailyIdx], showItem-len+dailyIdx);
-      const newDaily = dailyContainer[showItem-len+dailyIdx].cloneNode(true);
-      console.log(newDaily)
+    if(dailyIdx >= len - showItem && cntClone < showItem){
+      const newDaily = dailyBox.children[cntClone].cloneNode(true);
       dailyBox.appendChild(newDaily);
+      cntClone++;
     }
-    // if(cnt >= showSize){
-    //   cnt = 0;
-    //   dailyIdx ++;
-    //   if(dailyIdx > len) dailyIdx = 0;
-    //   console.log(dailyBox.children[dailyIdx-1], dailyIdx-1);
-      // const newDaily = dailyBox.children[dailyIdx-1].cloneNode(true);
-      // dailyBox.appendChild(newDaily);
-      // dailyBox.removeChild(document.querySelector('.daily__ul').children[0]);
-    //   dailyBox.style.transform = `translateX(${-dailyCnt}px)`;
-    // }
-    dailyBox.style.transform = `translateX(${-dailyIdx*(showSize+20)}px)`;
-    // requestAnimationFrame(dailyMove);
+    dailyBox.style.transition = `all 1s`;
+    dailyBox.style.transform = `translateX(${-dailyIdx*(showSize+22)}px)`;
+    if(dailyIdx >= len){
+      dailyIdx = 0;
+      setTimeout(() => {
+        dailyBox.style.transition = ``;
+        dailyBox.style.transform = `translateX(${0}px)`;
+      }, 1900);
+    }
   };
   
-  // dailyMove();
-  setInterval(dailyMove, 2000);
+  // setInterval(dailyMove, 2000);
 }catch(e){
   console.log(e);
 };

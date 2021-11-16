@@ -238,7 +238,6 @@
 .daily{
   &__container{
     overflow: hidden;
-    border: 1px solid red;
     flex-wrap: nowrap;
     margin-bottom: 200px;
     transition: all .9s;
@@ -248,11 +247,10 @@
     gap: rem(20px);
     // justify-content: center;
     justify-items: flex-start;
-    transition: all .9s;
+    // transition: all .9s;
 
     // li 요소
     li{
-      border: 1px solid black;
       position: relative;
       min-width: rem(240px);
       min-height:rem(280px);
