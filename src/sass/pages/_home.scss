@@ -1,51 +1,23 @@
 @use './../utils' as *;
 
-main{
-  // padding-top: rem(100px);
-  // background-color: red;
+
+.main-wrapper{
+  background-color: blue;
   max-width: rem(1200px);
   margin: 0 auto;
-  @include mobile{
-    padding-top: rem(146px);
-  }
 }
 
 // 비디오 첫페이지
 .video{
-  &__iframe{
-    object-fit: cover;
-    // position: absolute;
+  // 비디오 container
+  &__iframe-container{
     width: 100vw;
     height:100vh;
-    top: 0;
-
-    // left:50%;
-    // transform:translateX(-50%);
   }
-  &-words, &-scroll{
-    position: absolute;
-    color: $white;
-    z-index: 1;
-  }
-  &-scroll{
-    background-color: black;
-    right:rem(20px);
-    bottom: rem(20px);
-    font-size: rem(25px);
-  }
-  &-words{
-    font-size: rem(120px);
-    text-shadow: 2px 1px 10px $navy;
-    bottom: 40%;
-    letter-spacing: rem(-10px);
-    &--bold{
-      font-weight: 700;
-      @include marginY(20px);
-    }
-    @include mobile{
-      font-size: rem(60px);
-      left:5%;
-    }
+  &__iframe{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -53,7 +25,7 @@ main{
 // 베스트 드로우
 .best{
   position: relative;
-  margin-top: calc(100vh + 100px);
+  // margin-top: calc(100vh + 100px);
   width: 100%;
   overflow: hidden;
 
