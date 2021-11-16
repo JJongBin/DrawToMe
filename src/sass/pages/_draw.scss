@@ -50,7 +50,8 @@
 		}
 	}
 
-	&__figure {
+	&__link {
+		display: inline-block;
 		@include mobile {
 			img {
 				width: 100%;
@@ -66,12 +67,11 @@
 	}
 
 	&__figcaption {
-		@include flexbox($direction: column, $items: start);
 		em {
+			display: block;
 			font-weight: 700;
 			font-size: 2.4rem;
-			margin-top: rem(50px);
-			margin-bottom: rem(20px);
+			@include marginY(20px);
 			@include mobile {
 				font-size: 1.4rem;
 				margin-top: rem(30px);
@@ -97,18 +97,13 @@
 		display: none;
 	}
 
-	&__figure:hover + &__detail {
+	&__link:hover {
 		@include desktop {
-			display: block;
-			width: 100%;
-			color: $lightwhite;
-			font-weight: 700;
-			font-size: 2rem;
 			// @include fontSB($size:rem(32px), $bold)
-			@include position($top: 30%);
+			// @include position($top: 10%);
 			background-color: rgba(0, 0, 0, 0.6);
 			backdrop-filter: blur(5px);
-			padding: rem(30px);
+			// padding: rem(30px);
 			li {
 				display: inline-block;
 				@include marginY(50px);
