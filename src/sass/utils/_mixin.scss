@@ -82,9 +82,9 @@
 }
 
 // 그리드 믹스인
-@mixin gridbox($column-count: 12, $column-gap: 16px, $row-gap: 0) {
+@mixin gridbox($column-count: 2, $column-gap: rem(16px), $row-gap: 0) {
 	display: grid;
-	grid-template-columns: repeat($column-count, 1fr);
+	grid-template-columns: repeat($column-count, 2fr);
 	grid-template-rows: auto;
 	grid-column-gap: $column-gap;
 	grid-row-gap: $row-gap;
