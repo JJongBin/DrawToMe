@@ -1,8 +1,7 @@
 @use './../utils' as *;
 
 .draw {
-	position: relative;
-	margin-top: rem(120px);
+	margin-top: rem(10px);
 
 	&__title {
 		display: inline-block;
@@ -31,7 +30,12 @@
 	}
 
 	&__list {
-		@include flexbox($justify: space-between, $wrap: wrap);
+		@include mobile {
+			@include gridbox($column-count: 1);
+		}
+		@include desktop {
+			@include gridbox();
+		}
 	}
 
 	&__figure {
@@ -95,10 +99,3 @@
 	}
 
 }
-
-
-.is-active + .draw__list > li > figure > .draw__link {
-	width: rem(300px);
-	height: rem(300px);
-}
-
