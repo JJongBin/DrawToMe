@@ -116,15 +116,109 @@
 	left: 50%;
 	transform: translateX(-50%);
 
-	label {
-		width: rem(10px);
-		height: rem(10px);
-		border-radius: 50%;
-		margin: rem(10px);
-		border: 2px solid $navy;
-		cursor: pointer;
+	// 진행중인 드로우
+
+	.main-draw {
+		position: relative;
+		margin-top: rem(70px);
+		margin-bottom: rem(500px);
+		width: 100%;
+		// background-color: skyblue;
+		img {
+			display: block;
+			width: 100%;
+		}
+
+		&-title {
+			font-size: rem(25px);
+			font-weight: 700;
+			margin: rem(14px) 0;
+		}
+
+		&-container {
+			// background-color: yellowgreen;
+			display: flex;
+			justify-content: space-between;
+			gap: rem(40px);
+		}
+
+		&-item {
+			box-shadow: 0 0 rem(10px) rgb(0 0 0 / 10%);
+
+			figure {
+				position: relative;
+			}
+			&:hover .sr-only {
+				transition: background-color 0.3s;
+				z-index: 10;
+				top: 0;
+				left: 0;
+				clip: initial;
+				clip-path: initial;
+				width: 100%;
+				height: 100%;
+				color: $bg;
+				background-color: rgba($color: #000000, $alpha: 0.6);
+				p:first-child {
+					text-align: center;
+					margin-top: 10%;
+					font-size: rem(20px);
+				}
+			}
+		}
+		&-more {
+			position: absolute;
+			top: 0;
+			right: rem(10px);
+			line-height: rem(25px);
+			&::after {
+				content: '> ';
+			}
+		}
 	}
-	input:checked + label {
-		background-color: $navy;
+
+	// 데일리쇼즈, 진행중인 드로우 heading
+	.daily__h2 {
+		font-weight: 700;
+		font-size: rem(26px);
+		margin: rem(10px);
+	}
+
+	// 데일리룩
+	.daily {
+		&__ul {
+			display: flex;
+			flex-wrap: nowrap;
+			// justify-content: center;
+			justify-items: flex-start;
+			// li 요소
+			li {
+				position: relative;
+				width: rem(240px);
+				height: rem(280px);
+				overflow: hidden;
+				margin-left: rem(10px);
+				border-radius: rem(30px);
+				@include mobile {
+					min-width: rem(150px);
+				}
+				// 인스타그램 아이디
+				span {
+					color: $black;
+					position: absolute;
+					bottom: 5%;
+					left: 5%;
+				}
+				figure {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+		&__img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 }
