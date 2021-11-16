@@ -101,6 +101,25 @@ main{
 .swiper-next{
   right: rem(20px);
 }
+.swiper-pagination{
+  display: flex;
+  position: absolute;
+  bottom: rem(15px);
+  left: 50%;
+  transform: translateX(-50%);
+  
+  label{
+    width: rem(10px);
+    height: rem(10px);
+    border-radius: 50%;
+    margin: rem(10px);
+    border: 2px solid $navy;
+    cursor: pointer;
+  }
+  input:checked + label{
+    background-color: $navy;
+  }
+}
 
 
 

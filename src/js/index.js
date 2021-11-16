@@ -4,29 +4,48 @@ const carouselScreen = carousel.querySelector('.best-swiper-container');
 const numScreen = carouselScreen.childElementCount;
 const prevBtn = carousel.querySelector('.swiper-prev');
 const nextBtn = carousel.querySelector('.swiper-next');
+const pagination = carousel.querySelector('.swiper-pagination');
+const paginationChildren = pagination.children;
 
-let nowPos = 0;
+const handleDot = (now) => {
+  paginationChildren[now*2].checked = true;
+  const pos = now / numScreen * 100;
+  carouselScreen.style.transform = `translateX(${-pos}%)`;
+}
+const checkRadio = () => {
+  for(let i = 0; i < paginationChildren.length; i=i+2){
+    if(paginationChildren[i].checked === true) return i / 2;
+  }
+}
+
 const handlePrev = () => {
-  const pos = 100 / numScreen;
-  nowPos += pos;
-  if(nowPos > 1) nowPos = -(100 - 100 / numScreen);
-  carouselScreen.style.transform = `translateX(${nowPos}%)`;
+  let idx = checkRadio();
+  idx--;
+  if(idx < 0) idx = numScreen - 1;
+  handleDot(idx);
 }
 const handleNext = () => {
-  const pos = 100 / numScreen;
-  nowPos -= pos;
-  if(nowPos <= -100) nowPos = 0;
-  carouselScreen.style.transform = `translateX(${nowPos}%)`;
+  let idx = checkRadio();
+  idx++;
+  if(idx > numScreen - 1) idx = 0;
+  handleDot(idx);
+}
+const handlePage = () => {
+  let idx = checkRadio();
+  const pos = idx / numScreen * 100;
+  carouselScreen.style.transform = `translateX(${-pos}%)`;
 }
 
 prevBtn.addEventListener('click', handlePrev);
 nextBtn.addEventListener('click', handleNext);
+pagination.addEventListener('click', handlePage);
 
 
 // button-top
 const topButton = document.querySelector('.button-top');
 
 const handleTopButton = () => {
-  window.scrollTo({top:0, left:0, behavior:'smooth'});
+  const viewPortHeight = document.documentElement.clientHeight;
+  window.scrollTo({top:viewPortHeight, left:0, behavior:'smooth'});
 }
 topButton.addEventListener('click', handleTopButton);
