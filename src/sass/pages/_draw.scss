@@ -48,8 +48,57 @@
 			}
 		}
 	}
+
+	&__figcaption{
+		@include flexbox($direction: column, $items: start);
+		em {
+			font-weight: 700;
+			font-size: 1.6em;
+			@include marginY(20px);
+		}
+		p{
+			font-size: 1.6em;
+			margin-bottom: rem(20px);
+		}
+	
+	}
+
+	li{
+		position: relative;
+	}
+
+	&__detail{
+		display: none;
+	}
+
+	&__figure:hover + &__detail{
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: $lightwhite;
+		font-weight: 700;
+		font-size: 2em;
+		li{
+			@include marginY(150px);
+			display: inline-block;
+		}
+		li:nth-child(n+2)::before{
+			content: '\007C';
+			@include marginX(10px);
+		}
+	}
+
+	&__figure:hover &__link > &__img{
+		filter: blur(10px);
+	}
+
 }
+
+
 .is-active + .draw__list > li > figure > .draw__link {
 	width: rem(300px);
 	height: rem(300px);
 }
+
