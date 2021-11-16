@@ -39,15 +39,13 @@ try{
     let idx = checkRadio();
     const pos = idx / numScreen * 100;
     carouselScreen.style.transform = `translateX(${-pos}%)`;
-    console.log(carouselScreen.style.transition)
-    // carouselScreen.style.transition = `translateX(${-pos}%)`;
   };
   
   prevBtn.addEventListener('click', handlePrev);
   nextBtn.addEventListener('click', handleNext);
   pagination.addEventListener('click', handlePage);
 }catch(e){
-  console.log(e);
+  // console.log(e);
 };
 
 
@@ -61,7 +59,7 @@ try{
   };
   topButton.addEventListener('click', handleTopButton);
 }catch(e){
-  console.log(e);
+  // console.log(e);
 };
 
 window.addEventListener('scroll', function() {
@@ -110,5 +108,26 @@ try{
   
   setInterval(dailyMove, 2000);
 }catch(e){
-  console.log(e);
+  // console.log(e);
 };
+
+
+// ---------------------------------
+// first page scroll
+window.addEventListener('wheel', function(event) {
+  const scrollPos = document.documentElement.scrollTop;
+  const viewHeight = window.innerHeight - 80;
+  // console.log(scrollPos)
+  // console.log(event.deltaY)
+  if(event.deltaY > 1 && scrollPos < viewHeight){
+    event.preventDefault();
+    // event.stopPropagation();
+    window.scrollTo({top:viewHeight, left:0, behavior:'smooth'});
+  }
+  else if(event.deltaY < -1 && scrollPos <= viewHeight + 10){
+    event.preventDefault();
+    // event.stopPropagation();
+    window.scrollTo({top:0, left:0, behavior:'smooth'});
+  }
+}, {passive : false});
+// });
