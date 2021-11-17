@@ -146,7 +146,8 @@
 .swiper-pagination{
   display: flex;
   position: absolute;
-  bottom: rem(15px);
+  bottom: rem(0px);
+  z-index: 100;
   left: 50%;
   transform: translateX(-50%);
   
@@ -157,6 +158,11 @@
     margin: rem(10px);
     border: 2px solid $navy;
     cursor: pointer;
+    @include mobile{
+      width: rem(6px);
+      height: rem(6px);
+      border: 1px solid $navy;
+    }
   }
   input:checked + label{
     background-color: $navy;

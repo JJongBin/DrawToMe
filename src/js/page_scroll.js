@@ -1,4 +1,6 @@
 // // ---------------------------------
+history.scrollRestoration = "manual"    // 새로고침시 최상단으로
+
 // // first page scroll
 // window.addEventListener('wheel', function(event) {
 //   const scrollPos = document.documentElement.scrollTop;
