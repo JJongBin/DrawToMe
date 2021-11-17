@@ -53,8 +53,33 @@
 			@include gridbox();
 
 			&.is-active {
+				animation: gridAnimation .7s;
 				@include gridbox($column-count: 3);
 			}
+			animation: gridAnimation2 .7s;
+		}
+	}
+
+	@keyframes gridAnimation{
+		0%{
+			opacity: 0;
+		}
+		5%{
+			opacity: .2;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	@keyframes gridAnimation2{
+		0%{
+			opacity: 0;
+		}
+		5%{
+			opacity: .2;
+		}
+		100%{
+			opacity: 1;
 		}
 	}
 
@@ -132,12 +157,13 @@
 			color: $lightblue;
 		}
 	}
-
-	&__detail {
-		display: none;
-	}
 	&__link:hover 
 	&__detail {
+		opacity: 1;
+		transition: opacity .4s;
+	}
+	&__detail {
+		opacity: 0;
 		display: flex;
 		background-color: rgba($color: $black, $alpha: 0.6);
 		border-radius: rem(10px);
