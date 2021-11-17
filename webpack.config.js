@@ -27,8 +27,6 @@ module.exports = {
   },
   entry: {
     main: './src/index.js',
-    drawlist: './src/drawlist.js',
-    detail: './src/detail.js'
   },
   output: {
     publicPath: '/',
@@ -89,30 +87,20 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'),
     }),
-    new HtmlWebpackPlugin({
-      template:'./src/drawlist.html',
-      filename:'./drawlist.html',
-      chunks: ['drawlist'],
-    }),
-    new HtmlWebpackPlugin({
-      template:'./src/detail.html',
-      filename:'./detail.html',
-      chunks: ['detail'],
-    }),
     new MiniCSSExtractPlugin({
       linkType: false,
-      filename: './css/style.css',
+      filename: 'css/style.css',
     }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.join(__dirname, 'src/assets'),
-          to: path.join(
-            __dirname,
-            `${isDevelopment ? paths.dist : paths.build}/assets`
-          ),
-        },
-      ],
-    }),
+    // new CopyPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.join(__dirname, 'src/assets'),
+    //       to: path.join(
+    //         __dirname,
+    //         `${isDevelopment ? paths.dist : paths.build}/assets`
+    //       ),
+    //     },
+    //   ],
+    // }),
   ],
 };
