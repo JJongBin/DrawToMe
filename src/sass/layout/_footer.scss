@@ -2,9 +2,10 @@
 
 
 .footer{
-    height:rem(140px);
+    // height:rem(140px);
     background-color:$navy;
     color: $lightblue;
+    padding-top:rem(10px);
     &__icon{
         display: flex;
         margin-left: rem(5px);
@@ -20,9 +21,9 @@
         }
     }
     &__info{
-        margin:rem(15px) 0;
         text-align: center;
         line-height: rem(24px);
+        padding-bottom: rem(20px);
         small{
             display: block;
         }
@@ -31,7 +32,8 @@
         }
         @include desktop{
             margin-top: rem(5px);
-            margin-bottom: rem(20px);
+            // margin-bottom: rem(20px);
+            padding-bottom: rem(20px);
         }
     }
 }
