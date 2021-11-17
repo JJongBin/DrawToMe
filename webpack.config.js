@@ -27,6 +27,7 @@ module.exports = {
   },
   entry: {
     main: './src/index.js',
+    drawlist: './src/drawlist.js'
   },
   output: {
     publicPath: '/',
@@ -89,7 +90,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template:'./src/drawlist.html',
-      filename:'./drawlist.html'
+      filename:'./drawlist.html',
+      chunks: ['drawlist'],
     }),
     new HtmlWebpackPlugin({
       template:'./src/detail.html',
