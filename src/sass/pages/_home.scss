@@ -3,6 +3,7 @@
 .main-wrapper {
 	max-width: rem(1200px);
 	margin: 0 auto;
+	margin-bottom: rem(40px);
 }
 
 // 비디오 첫페이지
@@ -275,7 +276,6 @@
 
 // 데일리룩
 .daily{
-  padding: rem(10px);
   &__container{
     overflow: hidden;
     flex-wrap: nowrap;
