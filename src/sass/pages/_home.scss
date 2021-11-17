@@ -175,7 +175,7 @@
 		position: relative;
     @include marginY(70px);
 		width: 100%;
-		img {
+		img, source{
 			display: block;
       width: 100%;
       object-fit: cover;
