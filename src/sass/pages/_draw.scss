@@ -43,15 +43,16 @@
 		@include border($color: white);
 		color: white;
 		background: black;
-		transition: all 0.2s ease-in-out;
 	}
 
 	&__list {
+		transition: all 0.5s ease-in-out;
 		@include mobile {
 			@include gridbox($column-count: 1);
 		}
 		@include desktop {
 			@include gridbox();
+
 			&.is-active {
 				@include gridbox($column-count: 3);
 			}
@@ -124,7 +125,7 @@
 				display: inline-block;
 				margin: 10% 0;
 				@include mobile {
-					 margin: 5% 0;
+					margin: 5% 0;
 				}
 			}
 			li:nth-child(n + 2)::before {
