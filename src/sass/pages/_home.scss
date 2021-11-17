@@ -81,6 +81,9 @@
   width: 100%;
   overflow: hidden;
 
+  &-wraper{
+    position: relative;
+  }
   &-swiper-container{
     display: flex;
     flex-wrap: nowrap;
@@ -112,7 +115,7 @@
 	transform: translateY(-50%);
 	opacity: 0.5;
   background-size: cover;
-	transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .swiper-prev{
@@ -122,6 +125,18 @@
 .swiper-next{
   background-image:url('./../assets/images/next.png');
   right: rem(20px);
+}
+@include mobile{
+  .swiper-prev,
+  .swiper-next {
+    opacity: 0.3;
+  }
+  .swiper-prev{
+    left: rem(10px);
+  }
+  .swiper-next{
+    right: rem(10px);
+  }
 }
 
 .swiper-prev:hover,
@@ -156,17 +171,20 @@
 		width: 100%;
 		img {
 			display: block;
-			width: 100%;
+      width: 100%;
+      object-fit: cover;
       @include mobile{
-        min-width: rem(220px);
       }
 		}
     
 		&-container {
 			display: flex;
-			gap: rem(40px);
-      flex-wrap: nowrap;
+			gap: rem(30px);
+      justify-content: space-around;
+      align-content: space-around;
       @include mobile{
+        // gap: auto;
+        gap: rem(20px);
         flex-wrap: wrap;
       }
 		}
@@ -248,6 +266,9 @@
     margin-right: rem(10px);
   }
 }
+.best-title{
+  padding-left: rem(10px);
+}
 
 .daily__h2::after{
   content:"데일리 룩";
@@ -276,6 +297,8 @@
 
 // 데일리룩
 .daily{
+  padding-left: rem(10px);
+  padding-right: rem(10px);
   &__container{
     overflow: hidden;
     flex-wrap: nowrap;
@@ -287,15 +310,14 @@
     gap: rem(20px);
     justify-items: flex-start;
 
-    @include mobile{
-      gap: rem(15px);
-    }
+    // @include mobile{
+    //   gap: rem(20px);
+    // }
 
     // li 요소
     li{
       position: relative;
       box-sizing: border-box;
-      // min-width: rem(240px);
       min-width: calc((100% / 5) - (80px / 5));
       min-height: rem(280px);
       border-radius: rem(30px);
@@ -304,8 +326,7 @@
         min-width: calc((100% / 4) - (60px / 4));
       }
       @include mobile{
-        min-width: calc((100% / 3) - (30px / 3));
-        // min-width: rem(150px);
+        min-width: calc((100% / 3) - (40px / 3));
       }
 
       // 인스타그램 아이디
