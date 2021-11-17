@@ -36,49 +36,51 @@
 		@include mobile {
 			display: none;
 		}
-		&.is-active{
+		&.is-active {
 			background-color: transparent;
 			background-image: url('./../assets/images/draw-button.png');
 		}
-		
 	}
 
-
 	&__list {
+		&li {
+			margin-right: rem(16px);
+		}
 		transition: all 0.5s ease-in-out;
 		@include mobile {
 			@include gridbox($column-count: 1);
 		}
 		@include desktop {
-			@include gridbox();
-
+			@include gridbox;
+			@include layout;
 			&.is-active {
-				animation: gridAnimation .7s;
-				@include gridbox($column-count: 3);
+				@include gridbox-active();
+				@include layout2;
+				animation: gridAnimation 0.7s;
 			}
-			animation: gridAnimation2 .7s;
+			animation: gridAnimation2 0.7s;
 		}
 	}
 
-	@keyframes gridAnimation{
-		0%{
+	@keyframes gridAnimation {
+		0% {
 			opacity: 0;
 		}
-		5%{
-			opacity: .2;
+		5% {
+			opacity: 0.2;
 		}
-		100%{
+		100% {
 			opacity: 1;
 		}
 	}
-	@keyframes gridAnimation2{
-		0%{
+	@keyframes gridAnimation2 {
+		0% {
 			opacity: 0;
 		}
-		5%{
-			opacity: .2;
+		5% {
+			opacity: 0.2;
 		}
-		100%{
+		100% {
 			opacity: 1;
 		}
 	}
@@ -114,16 +116,15 @@
 				margin-top: rem(30px);
 				margin-bottom: rem(20px);
 			}
-			&:hover{
-				color: #57D2A2;
+			&:hover {
+				color: #57d2a2;
 			}
-			&.is-active{
-				@include desktop{
+			&.is-active {
+				@include desktop {
 					font-size: rem(20px);
 				}
 			}
 		}
-
 
 		p {
 			display: inline-block;
@@ -157,10 +158,9 @@
 			color: $lightblue;
 		}
 	}
-	&__link:hover 
-	&__detail {
+	&__link:hover &__detail {
 		opacity: 1;
-		transition: opacity .4s;
+		transition: opacity 0.4s;
 	}
 	&__detail {
 		opacity: 0;
@@ -202,7 +202,7 @@
 		}
 	}
 
-	&__link:hover + &__figcaption em{
-		color: #57D2A2;
+	&__link:hover + &__figcaption em {
+		color: #57d2a2;
 	}
 }
