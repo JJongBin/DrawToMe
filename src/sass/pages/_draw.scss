@@ -77,7 +77,7 @@
 	}
 
 	&__figcaption {
-		display:block;
+		display: block;
 		@include paddingX(10px);
 		em {
 			display: block;
@@ -98,8 +98,8 @@
 				font-size: 1.2rem;
 				margin-bottom: rem(30px);
 			}
-			&::after{
-				content: " 원";
+			&::after {
+				content: ' 원';
 			}
 		}
 	}
@@ -109,12 +109,12 @@
 		font-weight: 700;
 		font-size: rem(35px);
 		margin: rem(14px) 0;
-		@include mobile{
+		@include mobile {
 			margin-left: rem(10px);
 			margin-right: rem(10px);
 		}
-		&::after{
-			content:"진행중인 드로우 목록";
+		&::after {
+			content: '진행중인 드로우 목록';
 			padding-top: rem(5px);
 			display: block;
 			font-size: rem(20px);
@@ -135,8 +135,8 @@
 		position: absolute;
 		top: 0;
 		color: $white;
-		line-height:1.5;
-		span{
+		line-height: 1.5;
+		span {
 			display: block;
 			font-size: rem(20px);
 			text-overflow: ellipsis;
@@ -146,10 +146,10 @@
 		@include mobile {
 			padding: 5%;
 		}
-	
+
 		.detail-list {
 			position: absolute;
-			bottom:10%;
+			bottom: 10%;
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
@@ -157,11 +157,7 @@
 				display: inline-block;
 				// margin: 10% 0;
 				@include mobile {
-<<<<<<< HEAD
-					margin: 5% 0;
-=======
-					 margin: 2% 0;
->>>>>>> 19fd3305a0bdbe3dc6d7879424fe7b6c803d8e2b
+					margin: 2% 0;
 				}
 			}
 			li:nth-child(n + 2)::before {
@@ -174,4 +170,3 @@
 		}
 	}
 }
-
