@@ -56,7 +56,32 @@
 			&.is-active {
 				@include gridbox-active();
 				@include layout2;
+				animation: gridAnimation .7s;
 			}
+			animation: gridAnimation2 .7s;
+		}
+	}
+
+	@keyframes gridAnimation{
+		0%{
+			opacity: 0;
+		}
+		5%{
+			opacity: .2;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	@keyframes gridAnimation2{
+		0%{
+			opacity: 0;
+		}
+		5%{
+			opacity: .2;
+		}
+		100%{
+			opacity: 1;
 		}
 	}
 
@@ -133,11 +158,17 @@
 			color: $lightblue;
 		}
 	}
-
+	&__link:hover 
 	&__detail {
-		display: none;
+		opacity: 1;
+		transition: opacity .4s;
 	}
+<<<<<<< HEAD
 	&__link:hover &__detail {
+=======
+	&__detail {
+		opacity: 0;
+>>>>>>> 4f3803874bd7c8ce9b594f25b6a34936c418ca46
 		display: flex;
 		background-color: rgba($color: $black, $alpha: 0.6);
 		border-radius: rem(10px);
