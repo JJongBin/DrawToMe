@@ -113,7 +113,7 @@
 	height: rem(40px);
 	top: 50%;
 	transform: translateY(-50%);
-	opacity: 0.5;
+	opacity: 0.3;
   background-size: cover;
   transition: all 0.3s;
 }
@@ -127,10 +127,10 @@
   right: rem(20px);
 }
 @include mobile{
-  .swiper-prev,
-  .swiper-next {
-    opacity: 0.3;
-  }
+  // .swiper-prev,
+  // .swiper-next {
+  //   opacity: 0.3;
+  // }
   .swiper-prev{
     left: rem(10px);
   }
@@ -141,7 +141,7 @@
 
 .swiper-prev:hover,
 .swiper-next:hover {
-	opacity: 1;
+	opacity: .7;
 }
 .swiper-pagination{
   display: flex;
@@ -315,11 +315,6 @@
     gap: rem(20px);
     justify-items: flex-start;
 
-    // @include mobile{
-    //   gap: rem(20px);
-    // }
-
-    // li 요소
     li{
       position: relative;
       box-sizing: border-box;

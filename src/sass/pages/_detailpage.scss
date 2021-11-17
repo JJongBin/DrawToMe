@@ -4,7 +4,7 @@
   max-width: rem(1200px);
   margin: 0 auto;
   padding: rem(30px);
-  padding-top: rem(140px);
+  padding-top: rem(95px);
 
   .image-container{
     position: sticky;
@@ -62,11 +62,17 @@
         font-weight: 700;
         padding-top: rem(10px);
         padding-bottom: rem(10px);
+        @include mobile{
+          font-size: 4vw;
+        }
       }
       &--shoesname__ko{
         display: block;
         font-size: 2vw;
         padding-bottom: rem(10px);
+        @include mobile{
+          font-size: 3vw;
+        }
       }
       &--description{
         display: block;
@@ -82,6 +88,9 @@
         padding-bottom: rem(10px);
         display: flex;
         border-bottom: 1px solid rgba($navy , $alpha: .7);
+        @media (min-width: 1000px){
+          font-size: rem(20px);
+        }
       }
 
       &--release{
@@ -121,10 +130,13 @@
       line-height: rem(30px);
       font-size: rem(18px);
       border-bottom: 1px solid rgba($navy, $alpha: .2);
+      @include mobile{
+        line-height: rem(25px);
+        font-size: rem(14px);
+
+      }
       &::before{
         content: "";
-        border: 2px solid $navy;
-        border-radius: rem(5px);
         margin-right: rem(10px);
         vertical-align: bottom;
         display: inline-block;
@@ -134,6 +146,12 @@
         background-size: 30px 30px;
         width: 40px;
         height: 30px;
+        @include mobile{
+          width: 30px;
+          height: 25px;
+          background-size: 20px 20px;
+
+        }
       }
       a{
         float: right;
@@ -170,100 +188,41 @@
   }
 }
 .apply--btn{
+  line-height: 30px;
   box-sizing: border-box;
   font-size: rem(14px);
   height: rem(30px);
   padding-left: rem(10px);
   padding-right: rem(10px);
+  @include mobile{
+    line-height: 25px;
+    font-size: rem(10px);
+    height: rem(25px);
+  }
 }
 
 
 
 
 .detail{
-  position: relative;
-  margin-top: rem(70px);
-  width: 100%;
-  overflow: hidden;
-
   &-wraper{
+    overflow: hidden;
     width: 100%;
     position: relative;
+    .swiper-prev{
+      left: rem(10px);
+    }
+    .swiper-next{
+      right: rem(10px);
+    }
   }
   &-swiper-container{
     display: flex;
     flex-wrap: nowrap;
-    // height: 100%;
-    width: calc(100% * 4);
-    // transition: 1s;
+    width: calc(100% * 5);
   }
   &-swiper{
     width: 100%;
   }
   
-  picture{
-    display: block;
-    // height: 40vh;
-    width: 100%;
-  }
-}
-.swiper-prev,
-.swiper-next {
-  text-indent: rem(9999px);
-	appearance: none;
-	border: none;
-	background: transparent;
-	cursor: pointer;
-	position: absolute;
-	width: rem(40px);
-	height: rem(40px);
-	top: 50%;
-	transform: translateY(-50%);
-	opacity: 0.5;
-  background-size: cover;
-  transition: all 0.3s;
-}
-
-.swiper-prev{
-  background-image:url('./../assets/images/prev.png');
-  left: rem(10px);
-}
-.swiper-next{
-  background-image:url('./../assets/images/next.png');
-  right: rem(10px);
-}
-@include mobile{
-  .swiper-prev,
-  .swiper-next {
-    opacity: 0.3;
-  }
-}
-
-.swiper-prev:hover,
-.swiper-next:hover {
-	opacity: 1;
-}
-.swiper-pagination{
-  display: flex;
-  position: absolute;
-  bottom: rem(0px);
-  left: 50%;
-  transform: translateX(-50%);
-  
-  label{
-    width: rem(10px);
-    height: rem(10px);
-    border-radius: 50%;
-    margin: rem(10px);
-    border: 2px solid $navy;
-    cursor: pointer;
-    @include mobile{
-      width: rem(6px);
-      height: rem(6px);
-      border: 1px solid $navy;
-    }
-  }
-  input:checked + label{
-    background-color: $navy;
-  }
 }
