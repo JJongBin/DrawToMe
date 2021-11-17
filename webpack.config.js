@@ -27,7 +27,8 @@ module.exports = {
   },
   entry: {
     main: './src/index.js',
-    drawlist: './src/drawlist.js'
+    drawlist: './src/drawlist.js',
+    detail: './src/detail.js'
   },
   output: {
     publicPath: '/',
@@ -95,7 +96,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template:'./src/detail.html',
-      filename:'./detail.html'
+      filename:'./detail.html',
+      chunks: ['detail'],
     }),
     new MiniCSSExtractPlugin({
       linkType: false,

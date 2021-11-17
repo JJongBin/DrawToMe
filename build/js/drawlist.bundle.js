@@ -1,1 +1,40 @@
-(()=>{var o={954:()=>{const o=document.querySelector(".button-top");try{const e=()=>{document.documentElement.clientHeight,window.scrollTo({top:0,left:0,behavior:"smooth"})};o.addEventListener("click",e)}catch(o){}window.addEventListener("scroll",(function(){scrollPos=document.documentElement.scrollTop,scrollPos>30?o.style.opacity=1:o.style.opacity=0}))},595:()=>{console.log("hello!"),console.log("hello!")}},e={};function t(r){var l=e[r];if(void 0!==l)return l.exports;var n=e[r]={exports:{}};return o[r](n,n.exports,t),n.exports}t.n=o=>{var e=o&&o.__esModule?()=>o.default:()=>o;return t.d(e,{a:e}),e},t.d=(o,e)=>{for(var r in e)t.o(e,r)&&!t.o(o,r)&&Object.defineProperty(o,r,{enumerable:!0,get:e[r]})},t.o=(o,e)=>Object.prototype.hasOwnProperty.call(o,e),(()=>{"use strict";t(595),t(954)})()})();
+(() => {
+	var e = {
+			954: () => {
+				const e = document.querySelector('.button-top');
+				e.addEventListener('click', () => {
+					document.documentElement.clientHeight,
+						window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+				}),
+					window.addEventListener('scroll', function () {
+						(scrollPos = document.documentElement.scrollTop),
+							scrollPos > 30 ? (e.style.opacity = 1) : (e.style.opacity = 0);
+					});
+			},
+			595: () => {
+				console.log('hello!');
+			},
+		},
+		o = {};
+	function t(r) {
+		var n = o[r];
+		if (void 0 !== n) return n.exports;
+		var l = (o[r] = { exports: {} });
+		return e[r](l, l.exports, t), l.exports;
+	}
+	(t.n = (e) => {
+		var o = e && e.__esModule ? () => e.default : () => e;
+		return t.d(o, { a: o }), o;
+	}),
+		(t.d = (e, o) => {
+			for (var r in o)
+				t.o(o, r) &&
+					!t.o(e, r) &&
+					Object.defineProperty(e, r, { enumerable: !0, get: o[r] });
+		}),
+		(t.o = (e, o) => Object.prototype.hasOwnProperty.call(e, o)),
+		(() => {
+			'use strict';
+			t(595), t(954);
+		})();
+})();
