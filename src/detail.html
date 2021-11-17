@@ -50,9 +50,61 @@
   <main>
     <section class="main-container">
       <h2 class="sr-only">상세상품</h2>
-
       <div class="image-container">
-        <img src="./assets/images/shoes.jpeg" alt="">  
+        
+        
+        <div class="detail-wraper">
+          <ul class="detail-swiper-container">
+            <li class="detail-swiper">
+              <picture>
+                <source srcset="./assets/images/detailpage/sacai.jpeg" type="image/jpeg" />
+                <!-- <source srcset="./assets/images/detailpage/sacai.jpeg" type="image/webp" /> -->
+                <img src="./assets/images/detailpage/sacai.jpeg" />
+              </picture>
+            </li>
+            <li class="detail-swiper">
+              <picture>
+                <source srcset="./assets/images/detailpage/sacai2.jpeg" type="image/jpeg" />
+                <!-- <source srcset="./assets/images/detailpage/sacai2.jpeg" type="image/webp" /> -->
+                <img src="./assets/images/detailpage/sacai2.jpeg" />
+              </picture>
+            </li>
+            <li class="detail-swiper">
+              <picture>
+                <source srcset="./assets/images/detailpage/sacai3.jpeg" type="image/jpeg" />
+                <!-- <source srcset="./assets/images/detailpage/sacai3.jpeg" type="image/webp" /> -->
+                <img src="./assets/images/detailpage/sacai3.jpeg" />
+              </picture>
+            </li>
+            <li class="detail-swiper">
+              <picture>
+                <source srcset="./assets/images/detailpage/sacai4.jpeg" type="image/jpeg" />
+                <!-- <source srcset="./assets/images/detailpage/sacai4.jpeg" type="image/webp" /> -->
+                <img src="./assets/images/detailpage/sacai4.jpeg" />
+              </picture>
+            </li>
+            <li class="detail-swiper">
+              <picture>
+                <source srcset="./assets/images/detailpage/sacai5.jpeg" type="image/jpeg" />
+                <!-- <source srcset="./assets/images/detailpage/sacai5.jpeg" type="image/webp" /> -->
+                <img src="./assets/images/detailpage/sacai5.jpeg" />
+              </picture>
+            </li>
+          </ul>
+          <div class="swiper-pagination">
+            <input class="sr-only" type="radio" id="page1" name="best" checked><label for="page1"></label>
+            <input class="sr-only" type="radio" id="page2" name="best"><label for="page2"></label>
+            <input class="sr-only" type="radio" id="page3" name="best"><label for="page3"></label>
+            <input class="sr-only" type="radio" id="page4" name="best"><label for="page4"></label>
+          </div>
+          <button class="swiper-prev">prev</button>
+          <button class="swiper-next">next</button>
+        </div>
+        
+        <!-- <picture>
+          <source srcset="./assets/images/shoes.jpeg" type="image/webp" />
+          <img src="./assets/images/shoes.jpeg" />
+        </picture> -->
       </div>
 
       <div class="detail-container">
@@ -60,7 +112,9 @@
           <span class="detail--brand">NIKE</span>
           <span class="detail--shoesname__en">SACAI X NIKE VAPOR WAFFLE SAIL</span>
           <span class="detail--shoesname__ko">사카이 X 나이키 베이퍼와플 세일</span>
+          <span class="detail--description">편안하고 안정적인 갑피에 뛰어난 핏과 착화감을 자랑하는 클래식한 와플 밑창, 여기에 사카이의 혁신적인 스타일을 더했습니다.</span>
           <span class="detail--release">2021년 11월 19일</span>
+          <span class="detail--style">CV1363-001</span>
           <span class="detail--price">260,000</span>
         </div>
         <button class="pick btn" type="button">담아두기</button>
@@ -73,8 +127,16 @@
             <span class="nike">나이키 여의도점</span>
             <a href="#" class="apply--btn btn">응모하기</a>
           </li>
-          <li class="apply--list apply--list__end">
+          <li class="apply--list">
             <span class="nike">나이키 수원점</span>
+            <a href="#" class="apply--btn btn">응모하기</a>
+          </li>
+          <li class="apply--list">
+            <span class="nike">나이키 광교점</span>
+            <a href="#" class="apply--btn btn">응모하기</a>
+          </li>
+          <li class="apply--list">
+            <span class="nike">나이키 홍대점</span>
             <a href="#" class="apply--btn btn">응모하기</a>
           </li>
         </ul>

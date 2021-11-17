@@ -2,7 +2,6 @@
 
 
 header {
-	// visibility: hidden;
 	background-color: $white;
 	width: 100%;
 	position: fixed;
@@ -10,6 +9,7 @@ header {
 	border-bottom: 1px solid $navy;
 	z-index: 100;
 }
+
 .header-container {
 	white-space: nowrap;
 	position: absolute;
@@ -21,16 +21,18 @@ header {
 	left: 50%;
 	transform: translateX(-50%);
 }
+
 // 1. 로고
 .logo {
 	font-size: rem(35px);
 	letter-spacing: rem(-5px);
-	font-family: 'IBM Plex Sans KR', sans-serif;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  
 	@include mobile {
 		margin: 0 auto;
-	}
+  }
+  
 	@include desktop {
-		// white-space: nowrap;
 		padding: rem(24px);
 	}
 
@@ -66,13 +68,11 @@ header {
         left: 50%;
         transform: translateX(-50%);
         width: 0;
-        // opacity: 0;
         height: rem(1px);
         background: $navy;
         transition: all .4s;
       }
       &:hover::after{
-        // opacity: 1;
         width: 100%;
       }
 		}
@@ -92,7 +92,8 @@ header {
 			flex-grow: 1;
 			a {
 				display: block;
-				font-size: rem(14px);
+        font-size: rem(14px);
+        margin: rem(7px);
       }
 		}
 	}
