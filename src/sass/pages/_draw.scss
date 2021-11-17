@@ -89,6 +89,9 @@
 				margin-top: rem(30px);
 				margin-bottom: rem(20px);
 			}
+			&:hover{
+				color: #57D2A2;
+			}
 			&.is-active{
 				@include desktop{
 					font-size: rem(20px);
