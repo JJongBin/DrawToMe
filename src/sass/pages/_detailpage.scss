@@ -78,11 +78,13 @@
         display: block;
         font-weight: 300;
         line-height: 1.5;
+        color:$lightblue;
         padding-top: rem(30px);
         padding-bottom: rem(30px);
 
       }
       &--release, &--style, &--price{
+        opacity: 0.8;
         font-size: 2vw;
         padding-top: rem(30px);
         padding-bottom: rem(10px);
