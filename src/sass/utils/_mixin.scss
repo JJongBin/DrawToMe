@@ -91,7 +91,7 @@
 @mixin gridbox-active($column-count: 3, $column-gap: rem(16px), $row-gap: 0) {
 	display: grid;
 	grid-template-columns: 1fr $column-gap 1fr $column-gap 1fr;
-	grid-template-rows: repeat(5, 400px);
+	grid-template-rows: repeat(3, 400px);
 }
 
 @mixin layout() {
