@@ -16,18 +16,18 @@
 		display: inline-block;
 		width: 100%;
 		@include desktop {
-			padding: rem(60px) rem(20px) rem(40px) 0;
+			padding: rem(35px) rem(20px) rem(40px) 0;
 			@include fontSB($size: rem(40px), $bold: 700);
 		}
 		@include mobile {
 			@include fontSB($size: rem(30px), $bold: 700);
-			padding: rem(60px) rem(20px) rem(20px) 0;
+			padding: rem(20px) rem(20px) rem(20px) 0;
 		}
 	}
 
 	&__button {
 		@include border;
-		@include position($right: 0, $top: rem(60px));
+		@include position($right: 0, $top: rem(55px));
 		border-radius: rem(3px);
 		width: rem(50px);
 		height: rem(50px);
@@ -76,59 +76,91 @@
 	}
 
 	&__figcaption {
+		display:block;
+		@include paddingX(10px);
 		em {
 			display: block;
 			font-weight: 700;
-			font-size: 2.4rem;
-			@include marginY(20px);
+			font-size: rem(27px);
+			@include marginY(15px);
 			@include mobile {
-				font-size: 1.4rem;
+				font-size: rem(30px);
 				margin-top: rem(30px);
-				margin-bottom: rem(10px);
+				margin-bottom: rem(20px);
 			}
 		}
 		p {
 			display: inline-block;
-			font-size: 2rem;
-			margin-bottom: rem(150px);
+			font-size: rem(24px);
+			margin-bottom: rem(50px);
 			@include mobile {
 				font-size: 1.2rem;
-				margin-bottom: rem(100px);
+				margin-bottom: rem(30px);
 			}
+			&::after{
+				content: " 원";
+			}
+		}
+	}
+
+	// 진행중인 드로우 상품 목록
+	.draw__title {
+		font-weight: 700;
+		font-size: rem(35px);
+		margin: rem(14px) 0;
+		@include mobile{
+			margin-left: rem(10px);
+			margin-right: rem(10px);
+		}
+		&::after{
+			content:"진행중인 드로우 목록";
+			padding-top: rem(5px);
+			display: block;
+			font-size: rem(20px);
+			font-weight: 500;
+			color: $lightblue;
 		}
 	}
 
 	&__detail {
 		display: none;
 	}
-
 	&__link:hover &__detail {
 		display: block;
 		background-color: rgba($color: $black, $alpha: 0.6);
 		width: 100%;
 		height: 100%;
-		padding: 10%;
+		padding: 5%;
 		position: absolute;
 		top: 0;
-		color: white;
-		font-size: 100%;
+		color: $white;
+		line-height:1.5;
+		span{
+			display: block;
+			font-size: rem(20px);
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
 		@include mobile {
 			padding: 5%;
 		}
-
+	
 		.detail-list {
+			position: absolute;
+			bottom:10%;
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
 			li {
 				display: inline-block;
-				margin: 10% 0;
+				// margin: 10% 0;
 				@include mobile {
-					 margin: 5% 0;
+					 margin: 2% 0;
 				}
 			}
 			li:nth-child(n + 2)::before {
-				content: '\007C';
+				content: '\007C'+' ';
 				margin-right: 2%;
 				@include mobile {
 					margin-right: 1%;
@@ -137,3 +169,4 @@
 		}
 	}
 }
+
