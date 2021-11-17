@@ -26,24 +26,23 @@
 	}
 
 	&__button {
-		@include border;
 		@include position($right: 0, $top: rem(55px));
-		border-radius: rem(3px);
+		background-size: cover;
+		background-color: transparent;
+		background-image: url('./../assets/images/draw-button-is-active.png');
+		border: 0;
 		width: rem(50px);
 		height: rem(50px);
 		@include mobile {
 			display: none;
 		}
-		&.is-active {
-			background-color: black;
-			color: white;
+		&.is-active{
+			background-color: transparent;
+			background-image: url('./../assets/images/draw-button.png');
 		}
+		
 	}
-	&__button:hover {
-		@include border($color: white);
-		color: white;
-		background: black;
-	}
+
 
 	&__list {
 		transition: all 0.5s ease-in-out;
@@ -72,6 +71,7 @@
 			img {
 				width: 100%;
 				height: 100%;
+				border-radius: rem(10px);
 			}
 		}
 	}
@@ -79,20 +79,30 @@
 	&__figcaption {
 		display: block;
 		@include paddingX(10px);
-		em {
+		.figcaption-title {
 			display: block;
 			font-weight: 700;
-			font-size: rem(27px);
+			font-size: rem(22px);
 			@include marginY(15px);
 			@include mobile {
-				font-size: rem(30px);
+				font-size: rem(22px);
 				margin-top: rem(30px);
 				margin-bottom: rem(20px);
 			}
+			&:hover{
+				color: #57D2A2;
+			}
+			&.is-active{
+				@include desktop{
+					font-size: rem(20px);
+				}
+			}
 		}
+
+
 		p {
 			display: inline-block;
-			font-size: rem(24px);
+			font-size: rem(18px);
 			margin-bottom: rem(50px);
 			@include mobile {
 				font-size: 1.2rem;
@@ -126,9 +136,11 @@
 	&__detail {
 		display: none;
 	}
-	&__link:hover &__detail {
-		display: block;
+	&__link:hover 
+	&__detail {
+		display: flex;
 		background-color: rgba($color: $black, $alpha: 0.6);
+		border-radius: rem(10px);
 		width: 100%;
 		height: 100%;
 		padding: 5%;
@@ -136,13 +148,7 @@
 		top: 0;
 		color: $white;
 		line-height: 1.5;
-		span {
-			display: block;
-			font-size: rem(20px);
-			text-overflow: ellipsis;
-			overflow: hidden;
-			white-space: nowrap;
-		}
+
 		@include mobile {
 			padding: 5%;
 		}
@@ -168,5 +174,9 @@
 				}
 			}
 		}
+	}
+
+	&__link:hover + &__figcaption em{
+		color: #57D2A2;
 	}
 }
