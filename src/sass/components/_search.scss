@@ -1,0 +1,59 @@
+@use './../utils/' as *;
+
+.search {
+	&-form {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		padding-top: rem(150px);
+	}
+
+	&__input {
+		outline: 0;
+		text-indent: rem(10px);
+		padding-right: rem(50px);
+
+		width: rem(600px);
+		height: rem(50px);
+		@include border;
+		border-radius: rem(5px);
+		transition: border 0.3s ease-in-out;
+		@include desktop {
+			margin: 0 rem(30px);
+		}
+		@include mobile {
+			width: 100%;
+			margin: 0 rem(20px);
+		}
+	}
+
+	&__input:hover {
+		@include border($px: 3px, $color: black);
+	}
+	&__input:focus {
+		@include border($px: 3px, $color: black);
+	}
+
+	&-btn {
+		background-color: transparent;
+		background-image: url('./../assets/images/icon_sprites.png');
+		background-size: cover;
+		height: rem(20px);
+		width: rem(20px);
+		position: absolute;
+		right: rem(40px);
+	}
+
+	fieldset {
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		// position: relative;
+		// margin-top: rem(120px);
+		@include desktop {
+		}
+		@include mobile {
+		}
+	}
+}

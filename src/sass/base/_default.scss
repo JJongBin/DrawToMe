@@ -7,7 +7,8 @@ $root: 16px;
 // 루트 요소의 기본 글자 크기 및 가로 스크바 제거 ----------------------------------------------- /
 html {
   font-size: $rootUnit;
-  overflow-y: visible;
+  // overflow-y: visible;
+  min-width: rem(350px);
 }
 
 // 기본 박스 사이징 설정 -------------------------------------------------------------- /
@@ -35,6 +36,7 @@ body {
   font-family: 'Spoqa Han Sans Neo', Sans-serif;
   font-size: inherit;
   background-color: $white;
+  color: $navy;
 }
 
 // 제목 글자 크기 및 굵기 재지정 --------------------------------------------------------- /

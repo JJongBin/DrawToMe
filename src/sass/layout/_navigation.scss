@@ -1,0 +1,23 @@
+@use './../utils/' as *;
+
+// 위로 올라가는 버튼
+.button-top{
+  opacity: 0;
+  appearance: none;
+  position: fixed;
+  bottom: rem(30px);
+  right: rem(30px);
+  width: rem(50px);
+  height: rem(50px);
+  // border-radius: rem(5px);
+  border-radius: 50%;
+  font-size: rem(20px);
+  background: #ffffff;
+  border: 1px solid $navy;
+  transition: all .3s;
+  &:hover{
+    background: $navy;
+    border-color: $bg;
+    color: $bg;
+  }
+}

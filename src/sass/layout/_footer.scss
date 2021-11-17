@@ -1,0 +1,49 @@
+@use './../utils' as *;
+
+
+.footer{
+    // height:rem(140px);
+    background-color:$navy;
+    color: $lightblue;
+    padding-top:rem(10px);
+    &__icon{
+        display: flex;
+        margin-left: rem(5px);
+        li{
+            margin: rem(10px) rem(8px);
+            width: rem(35px);
+            @include desktop{
+                width: rem(40px);
+            }
+        }
+        @include desktop{
+            margin-left: rem(15px);
+        }
+    }
+    &__info{
+        text-align: center;
+        line-height: rem(24px);
+        padding-bottom: rem(20px);
+        small{
+            display: block;
+        }
+        span{
+            font-weight: 700;
+        }
+        @include desktop{
+            margin-top: rem(5px);
+            // margin-bottom: rem(20px);
+            padding-bottom: rem(20px);
+        }
+    }
+}
+// sns-icon 전체적인 height 조절
+
+.sns-icon{
+    img{
+        box-sizing: content-box;
+        padding: rem(5px);
+        width: 100%;
+        object-fit: cover;
+    }
+}
