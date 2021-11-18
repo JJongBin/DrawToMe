@@ -11,33 +11,16 @@
 	position: relative;
 	&__iframe-container {
 		background-color: $navy;
-		width: 100vw;
-		height: 100vh;
-	}
-	&__iframe {
 		width: 100%;
 		height: 100%;
+		// transform: translateY(-80px);
+	}
+	&__iframe {
+		width: 100vw;
+		height: 100%;
 		opacity: 0.5;
-
-		// top: 50%;
-		// left: 50%;
-		// min-width: 100vw;
-		// min-height: 100vh;
-		// width: 100vw;
-		// height: 100vh;
-		-webkit-transform: translateX(-50%) translateY(-50%);
-		-moz-transform: translateX(-50%) translateY(-50%);
-		-ms-transform: translateX(-50%) translateY(-50%);
-		-o-transform: translateX(-50%) translateY(-50%);
-		transform: translateX(-50%) translateY(-50%);
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		min-width: 100%;
-		min-height: 100%;
-		width: auto;
-		height: auto;
-		z-index: -100;
+		object-fit: cover;
+		// transform: translateY(-80px);
 	}
 	// 비디오 위 이미지
 	&-scroll {
