@@ -85,19 +85,19 @@
 @mixin gridbox($column-count: 2, $column-gap: rem(16px), $row-gap: 0) {
 	display: grid;
 	grid-template-columns: 1fr $column-gap 1fr;
-	grid-template-rows: repeat(5, 450px);
+	grid-template-rows: repeat(5, initial);
 }
 
 @mixin gridbox-mobile($column-count: 2, $column-gap: rem(16px), $row-gap: 0) {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: repeat(9, 550px);
+	grid-template-rows: repeat(9, initial);
 }
 
 @mixin gridbox-active($column-count: 3, $column-gap: rem(16px), $row-gap: 0) {
 	display: grid;
 	grid-template-columns: 1fr $column-gap 1fr $column-gap 1fr;
-	grid-template-rows: repeat(3, 400px);
+	grid-template-rows: repeat(3, initial);
 }
 
 @mixin layout-mobile() {
