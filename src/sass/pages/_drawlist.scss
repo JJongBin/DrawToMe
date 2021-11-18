@@ -179,16 +179,22 @@
 		@include mobile {
 			padding: 5%;
 		}
+		span{
+			opacity: 0.8;
+		}
 
 		.detail-list {
+			padding-top:rem(10px);
+			border-top:1px solid $white;
 			width: 90%;
 			position: absolute;
 			bottom: 10%;
-			color: #57d2a2;
+			color: $white;
 			font-weight: 700;
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
+			font-size:rem(18px);
 
 			li {
 				display: inline-block;
