@@ -29,10 +29,15 @@ body *::after {
 // a, input, button, select, textarea{
 //   outline: 0;
 // }
-
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
 // 본문 기본 폰트, 글자 크기, 굵기, 배경 색상 지정 --------------------------------------------- /
 body {
-  font-family: 'Spoqa Han Sans Neo', Sans-serif;
+  font-family: 'S-CoreDream-3Light', Sans-serif;
   font-size: inherit;
   background-color: $white;
 }

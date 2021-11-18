@@ -1,0 +1,277 @@
+// footer 아이콘 이미지 정렬
+
+@use './unit' as *;
+@use 'sass:math';
+
+// font-size, font-weight, padding, margin, border, position,test
+
+@mixin fontSB($size: initial, $bold: initial) {
+	font-size: $size;
+	font-weight: $bold;
+}
+
+@mixin autoMargin($marginX: auto) {
+	margin-left: $marginX;
+	margin-right: $marginX;
+}
+
+// padding 관련 믹스인
+@mixin paddingY($paddingY: 0) {
+	padding-top: rem($paddingY);
+	padding-bottom: rem($paddingY);
+}
+@mixin paddingX($paddingX: 0) {
+	padding-left: rem($paddingX);
+	padding-right: rem($paddingX);
+}
+
+@mixin marginY($marginY: 0) {
+	margin-top: rem($marginY);
+	margin-bottom: rem($marginY);
+}
+
+@mixin marginX($marginX: 0) {
+	margin-left: rem($marginX);
+	margin-right: rem($marginX);
+}
+
+@mixin border($px: 1px, $type: solid, $color: #c8c8c8) {
+	border: $px $type $color;
+}
+
+@mixin position(
+	$position: absolute,
+	$top: initial,
+	$right: initial,
+	$bottom: initial,
+	$left: initial
+) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin positionCenterX() {
+	@include position;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin positionCenterY() {
+	@include position;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin positionCenter(
+	$position: absolute,
+	$top: initial,
+	$right: initial,
+	$bottom: initial,
+	$left: initial
+) {
+	position: $position;
+}
+// footer 아이콘 이미지 정렬
+@mixin footer-img($size: cover, $repeat: no-repeat) {
+	display: block;
+	background: url('./../assets/images/icon_sprites.png') $repeat;
+	background-size: $size;
+}
+
+// 그리드 믹스인
+@mixin gridbox($column-count: 2, $column-gap: rem(16px), $row-gap: 0) {
+	display: grid;
+	grid-template-columns: 1fr $column-gap 1fr;
+	grid-template-rows: repeat(5, initial);
+}
+
+@mixin gridbox-mobile($column-count: 2, $column-gap: rem(16px), $row-gap: 0) {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(9, initial);
+}
+
+@mixin gridbox-active($column-count: 3, $column-gap: rem(16px), $row-gap: 0) {
+	display: grid;
+	grid-template-columns: 1fr $column-gap 1fr $column-gap 1fr;
+	grid-template-rows: repeat(3, initial);
+}
+
+@mixin layout-mobile() {
+	&__1 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+	&__2 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+	&__3 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 3;
+		grid-row-end: 4;
+	}
+	&__4 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 4;
+		grid-row-end: 5;
+	}
+	&__5 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 5;
+		grid-row-end: 6;
+	}
+	&__6 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 6;
+		grid-row-end: 7;
+	}
+	&__7 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 7;
+		grid-row-end: 8;
+	}
+	&__8 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 8;
+		grid-row-end: 9;
+	}
+	&__9 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 9;
+		grid-row-end: 10;
+	}
+}
+
+@mixin layout() {
+	&__1 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+	&__2 {
+		grid-column-start: 3;
+		grid-column-end: 4;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+	&__3 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+	&__4 {
+		grid-column-start: 3;
+		grid-column-end: 4;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+	&__5 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 3;
+		grid-row-end: 4;
+	}
+	&__6 {
+		grid-column-start: 3;
+		grid-column-end: 4;
+		grid-row-start: 3;
+		grid-row-end: 4;
+	}
+	&__7 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 4;
+		grid-row-end: 5;
+	}
+	&__8 {
+		grid-column-start: 3;
+		grid-column-end: 4;
+		grid-row-start: 4;
+		grid-row-end: 5;
+	}
+	&__9 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 5;
+		grid-row-end: 6;
+	}
+}
+
+@mixin layout2() {
+	.draw__list {
+		&__1 {
+			grid-column-start: 1;
+			grid-column-end: 2;
+			grid-row-start: 1;
+			grid-row-end: 2;
+		}
+		&__2 {
+			grid-column-start: 3;
+			grid-column-end: 4;
+			grid-row-start: 1;
+			grid-row-end: 2;
+		}
+
+		&__3 {
+			grid-column-start: 5;
+			grid-column-end: 6;
+			grid-row-start: 1;
+			grid-row-end: 2;
+		}
+
+		&__4 {
+			grid-column-start: 1;
+			grid-column-end: 2;
+			grid-row-start: 2;
+			grid-row-end: 3;
+		}
+		&__5 {
+			grid-column-start: 3;
+			grid-column-end: 4;
+			grid-row-start: 2;
+			grid-row-end: 3;
+		}
+		&__6 {
+			grid-column-start: 5;
+			grid-column-end: 6;
+			grid-row-start: 2;
+			grid-row-end: 3;
+		}
+
+		&__7 {
+			grid-column-start: 1;
+			grid-column-end: 2;
+			grid-row-start: 3;
+			grid-row-end: 4;
+		}
+		&__8 {
+			grid-column-start: 3;
+			grid-column-end: 4;
+			grid-row-start: 3;
+			grid-row-end: 4;
+		}
+		&__9 {
+			grid-column-start: 5;
+			grid-column-end: 6;
+			grid-row-start: 3;
+			grid-row-end: 4;
+		}
+	}
+}

@@ -1,0 +1,119 @@
+@use './../utils/' as *;
+
+
+header {
+	background-color: $white;
+	width: 100%;
+	position: fixed;
+	height: rem(80px);
+	border-bottom: 1px solid $navy;
+	z-index: 100;
+}
+
+.header-container {
+	white-space: nowrap;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	max-width: rem(1200px);
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+// 1. 로고
+.logo {
+	font-size: rem(35px);
+	letter-spacing: rem(-5px);
+  
+	@include mobile {
+		margin: 0 auto;
+  }
+  
+	@include desktop {
+		padding: rem(24px);
+	}
+
+	&__bold {
+		font-weight: 700;
+	}
+}
+
+// 2. 네비게이션
+.navigation {
+	flex-grow: 1;
+	&-list {
+		display: flex;
+
+		a {
+      text-align: center;
+      position: relative;
+      padding-top: rem(10px);
+      padding-bottom: rem(7px);
+      padding-right: rem(5px);
+      padding-left: rem(5px);
+      margin: rem(10px);
+			font-size: rem(20px);
+      font-weight: 400;
+      transition: all .4s;
+			&:hover {
+				font-weight: 700;
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: rem(1px);
+        background: $navy;
+        transition: all .4s;
+      }
+      &:hover::after{
+        width: 100%;
+      }
+		}
+	}
+	@include mobile {
+		position: fixed;
+		bottom: 0;
+		transform: translateY(100%);
+		width: 100%;
+		height: rem(46px);
+		background-color: $navy;
+		color: $bg;
+		li {
+			width: 8em;
+			height: 46px;
+			text-align: center;
+			flex-grow: 1;
+			a {
+				display: block;
+        font-size: rem(14px);
+        margin: rem(7px);
+      }
+		}
+	}
+	@include desktop {
+		font-size: rem(20px);
+		margin-left: 5%;
+	}
+}
+
+.member {
+	order: 1;
+	margin-right: rem(30px);
+	padding: rem(10px);
+
+	&-login {
+		margin-right: rem(5px);
+	}
+	&-signup {
+		margin-left: rem(5px);
+	}
+	@include mobile {
+		display: none;
+	}
+}

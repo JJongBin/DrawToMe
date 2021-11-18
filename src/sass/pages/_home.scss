@@ -1,0 +1,371 @@
+@use './../utils' as *;
+
+.main-wrapper {
+	max-width: rem(1200px);
+	margin: 0 auto;
+	margin-bottom: rem(40px);
+}
+// 비디오 첫페이지
+.video {
+	position: relative;
+
+	&__iframe-container {
+		background-color: $navy;
+		width: 100%;
+		height: 100vh;
+	}
+	&__iframe {
+		width: 100%;
+		height: 100%;
+		opacity: 0.5;
+
+		object-fit: cover;
+		// position: absolute;
+		// top: 50%;
+		// left: 50%;
+		// min-width: 100vw;
+		// min-height: 100vh;
+		// width: 100%;
+		// height: 100%;
+		// transform: translateX(-50%) translateY(-50%);
+	}
+	// 비디오 위 이미지
+	&-scroll {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		animation: scrollmove 1.5s ease-in infinite both;
+		img {
+			display: block;
+			width: 30px;
+			margin: rem(8px) auto;
+			@include desktop {
+				width: rem(40px);
+			}
+		}
+		small {
+			font-weight: 700;
+			color: $white;
+			font-size: rem(20px);
+			text-shadow: 2px 2px 6px gray;
+		}
+	}
+
+	// 스크롤바 animation
+	@keyframes scrollmove {
+		0% {
+			bottom: 4%;
+		}
+		50% {
+			bottom: 3%;
+		}
+		to {
+			bottom: 4%;
+		}
+	}
+
+	// video 위 문자 수정
+	&-words {
+		position: absolute;
+		top: 40%;
+		left: 5%;
+		color: $white;
+		font-size: rem(60px);
+		letter-spacing: rem(-10px);
+		@include desktop {
+			top: 30%;
+			font-size: rem(90px);
+		}
+		&--bold {
+			font-weight: 700;
+		}
+	}
+}
+
+// 베스트 드로우
+.best {
+	position: relative;
+	margin-top: rem(70px);
+	width: 100%;
+	overflow: hidden;
+	&-wraper {
+		position: relative;
+	}
+	&-swiper-container {
+		display: flex;
+		flex-wrap: nowrap;
+		width: calc(100% * 4);
+	}
+	&-swiper {
+		width: 100%;
+	}
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+.swiper-prev,
+.swiper-next {
+	text-indent: rem(9999px);
+	appearance: none;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	position: absolute;
+	width: rem(40px);
+	height: rem(40px);
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 0.3;
+	background-size: cover;
+	transition: all 0.3s;
+}
+
+.swiper-prev {
+	background-image: url('./../assets/images/prev.png');
+	left: rem(20px);
+}
+.swiper-next {
+	background-image: url('./../assets/images/next.png');
+	right: rem(20px);
+}
+@include mobile {
+	.swiper-prev {
+		left: rem(10px);
+	}
+	.swiper-next {
+		right: rem(10px);
+	}
+}
+
+.swiper-prev:hover,
+.swiper-next:hover {
+	opacity: 0.7;
+}
+.swiper-pagination {
+	display: flex;
+	position: absolute;
+	bottom: rem(0px);
+	left: 50%;
+	transform: translateX(-50%);
+
+	label {
+		overflow: hidden;
+		clip-path: circle(50%);
+		text-indent: rem(-9999px);
+		width: rem(10px);
+		height: rem(10px);
+		border-radius: 50%;
+		margin: rem(10px);
+		border: 2px solid $navy;
+		cursor: pointer;
+		@include mobile {
+			width: rem(6px);
+			height: rem(6px);
+			border: 1px solid $navy;
+		}
+	}
+	input:checked + label {
+		background-color: $navy;
+	}
+}
+
+// 진행중인 드로우
+.main-draw {
+	padding: rem(10px);
+	position: relative;
+	@include marginY(70px);
+	width: 100%;
+	img,
+	source {
+		display: block;
+		width: 100%;
+		object-fit: cover;
+		@include mobile {
+		}
+	}
+
+	&-container {
+		display: flex;
+		gap: rem(30px);
+		justify-content: space-around;
+		align-content: space-around;
+		@include mobile {
+			// gap: auto;
+			gap: rem(20px);
+			flex-wrap: wrap;
+		}
+	}
+
+	&-item {
+		box-shadow: 0 0 rem(10px) rgb(0 0 0 / 10%);
+		@include mobile {
+			max-width: calc(50% - 20px);
+			flex-grow: 1;
+		}
+		figure {
+			position: relative;
+		}
+		&:hover .sr-only {
+			transition: background-color 0.5s;
+			z-index: 10;
+			top: 0;
+			left: 0;
+			clip: initial;
+			clip-path: initial;
+			width: 100%;
+			height: 100%;
+			color: $bg;
+			background-color: rgba($color: #000000, $alpha: 0.5);
+			p {
+				margin-left: 2%;
+			}
+			p:first-child {
+				line-height: 1.5;
+				// letter-spacing: rem(-2px);
+				margin-top: 10%;
+				text-align: left;
+				font-size: rem(24px);
+				font-weight: 700;
+			}
+			p:last-child {
+				margin-top: rem(20px);
+				&::after {
+					content: ' 원';
+				}
+			}
+		}
+	}
+	&-more {
+		position: absolute;
+		top: rem(50px);
+		right: rem(10px);
+		line-height: rem(25px);
+
+		&::before {
+			content: '> ';
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 0;
+			// opacity: 0;
+			height: rem(1px);
+			background: $navy;
+			transition: all 0.4s;
+		}
+		&:hover::after {
+			// opacity: 1;
+			width: 100%;
+		}
+	}
+}
+
+// 데일리쇼즈, 진행중인 드로우 heading
+.daily__h2,
+.main-draw-title,
+.best-title {
+	font-weight: 700;
+	font-size: rem(35px);
+	margin: rem(14px) 0;
+	@include mobile {
+		margin-left: rem(10px);
+		margin-right: rem(10px);
+		font-size:rem(18px);
+	}
+}
+.best-title {
+	padding-left: rem(10px);
+}
+
+.daily__h2::after {
+	content: '데일리 룩';
+	padding-top: rem(5px);
+	display: block;
+	font-size: rem(20px);
+	font-weight: 500;
+	color: $lightblue;
+}
+.main-draw-title::after {
+	content: '새로 나온 드로우';
+	padding-top: rem(5px);
+	display: block;
+	font-size: rem(20px);
+	font-weight: 500;
+	color: $lightblue;
+}
+.best-title::after {
+	content: '인기 드로우';
+	padding-top: rem(5px);
+	display: block;
+	font-size: rem(20px);
+	font-weight: 500;
+	color: $lightblue;
+}
+.daily__h2::after,.main-draw-title::after,.best-title::after{
+	@include mobile {
+		font-size:rem(16px);
+	}
+}
+
+// 데일리룩
+.daily {
+	padding-left: rem(10px);
+	padding-right: rem(10px);
+	&__container {
+		overflow: hidden;
+		flex-wrap: nowrap;
+		margin-bottom: 200px;
+		transition: all 0.9s;
+	}
+	&__ul {
+		display: flex;
+		gap: rem(20px);
+		justify-items: flex-start;
+
+		li {
+			position: relative;
+			box-sizing: border-box;
+			min-width: calc((100% / 5) - (80px / 5));
+			min-height: rem(280px);
+			border-radius: rem(30px);
+			overflow: hidden;
+			@media (max-width: 1000px) {
+				min-width: calc((100% / 4) - (60px / 4));
+			}
+			@include mobile {
+				min-width: calc((100% / 3) - (40px / 3));
+			}
+			// IE
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+				margin-left: rem(20px);
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+
+			// 인스타그램 아이디
+			span {
+				color: $white;
+				font-weight: 700;
+				font-size: rem(18px);
+				text-shadow: 1px 1px 0 0 #000000;
+				position: absolute;
+				bottom: 5%;
+				left: 5%;
+			}
+			figure {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
