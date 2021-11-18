@@ -12,6 +12,8 @@
 		outline: 0;
 		text-indent: rem(10px);
 		padding-right: rem(50px);
+		appearance: none;
+		border-radius: none;
 
 		width: rem(600px);
 		height: rem(50px);
@@ -35,9 +37,10 @@
 	}
 
 	&-btn {
+		appearance: none;
 		background-color: transparent;
-		background-image: url('./../assets/images/icon_sprites.png');
-		background-size: cover;
+		background-image: url('./../assets/images/search.png');
+		background-size: contain ;
 		height: rem(20px);
 		width: rem(20px);
 		position: absolute;
