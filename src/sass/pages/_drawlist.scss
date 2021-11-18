@@ -48,7 +48,8 @@
 		}
 		transition: all 0.5s ease-in-out;
 		@include mobile {
-			@include gridbox($column-count: 1);
+			@include gridbox-mobile($column-count: 1);
+			@include layout-mobile;
 		}
 		@include desktop {
 			@include gridbox;
