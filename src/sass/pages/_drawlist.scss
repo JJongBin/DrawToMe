@@ -117,7 +117,7 @@
 				margin-top: rem(30px);
 				margin-bottom: rem(20px);
 			}
-			&:hover{
+			&:hover {
 				color: #23aa76;
 			}
 			&.is-active {
@@ -179,22 +179,23 @@
 		@include mobile {
 			padding: 5%;
 		}
-		span{
+		span {
 			opacity: 0.8;
 		}
 
 		.detail-list {
-			padding-top:rem(10px);
-			border-top:1px solid $white;
+			padding-top: rem(10px);
+			border-top: 1px solid $white;
 			width: 90%;
 			position: absolute;
+			left: 5%;
 			bottom: 10%;
 			color: $white;
 			font-weight: 700;
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
-			font-size:rem(18px);
+			font-size: rem(18px);
 
 			li {
 				display: inline-block;
@@ -212,7 +213,7 @@
 		}
 	}
 
-	&__link:hover + &__figcaption em{
+	&__link:hover + &__figcaption em {
 		color: #23aa76;
 	}
 }
