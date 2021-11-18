@@ -149,6 +149,7 @@
 		@include mobile {
 			margin-left: rem(10px);
 			margin-right: rem(10px);
+			font-size: rem(24px);
 		}
 		&::after {
 			content: '진행중인 드로우 목록';
@@ -157,6 +158,9 @@
 			font-size: rem(20px);
 			font-weight: 500;
 			color: $lightblue;
+			@include mobile{
+				font-size: rem(16px);
+			}
 		}
 	}
 	&__link:hover &__detail {
