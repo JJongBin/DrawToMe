@@ -176,15 +176,12 @@
 		color: $white;
 		line-height: 1.5;
 
-		span{
-			position: relative;
-		}
 		@include mobile {
 			padding: 5%;
 		}
 
 		.detail-list {
-			width: 100%;
+			width: 90%;
 			position: absolute;
 			bottom: 10%;
 			color: #57d2a2;
@@ -192,6 +189,7 @@
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
+
 			li {
 				display: inline-block;
 				@include mobile {
