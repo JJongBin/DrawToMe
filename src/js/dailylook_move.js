@@ -1,11 +1,17 @@
 // ---------------------------------
 // daily look
-
 const dailyBox = document.querySelector('.daily__ul');
 const len = dailyBox.children.length;
-
 let showSize = dailyBox.children[0].clientWidth;  // 아이템 하나의 초기값
 let showItem = Math.ceil(dailyBox.clientWidth / (showSize+20));
+
+// 잘못 구하는 경우가 종종 있으므로 1초뒤에 다시 구해줌
+setTimeout(() => {
+  let temp = dailyBox.children[0].clientWidth;
+  showSize = temp < showSize ? temp : showSize;  
+  showItem = Math.ceil(dailyBox.clientWidth / (showSize+20));
+}, 1000);
+
 
 window.onresize = () => {   // 반응형이므로 사이즈 변경 방지
   showSize = dailyBox.children[0].clientWidth;
