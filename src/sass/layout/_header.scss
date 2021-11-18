@@ -26,7 +26,6 @@ header {
 .logo {
 	font-size: rem(35px);
 	letter-spacing: rem(-5px);
-  font-family: 'IBM Plex Sans KR', sans-serif;
   
 	@include mobile {
 		margin: 0 auto;

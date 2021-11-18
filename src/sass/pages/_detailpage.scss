@@ -5,7 +5,9 @@
   margin: 0 auto;
   padding: rem(30px);
   padding-top: rem(95px);
-
+  @include mobile{
+    padding-top: rem(155px);
+  }
   .image-container{
     position: sticky;
     overflow: hidden;
@@ -29,20 +31,36 @@
       border-left: 1px solid rgba($color: #000000, $alpha: .3);
       width: 55%;
     }
+    @include mobile{
+      margin-left: rem(5px);
+      margin-right: rem(5px);
+    }
 
     .detail{
       font-weight: 400;
       &--brand{
         display: inline-block;
         font-size: rem(20px);
-        margin-top: rem(20px);
-        margin-bottom: rem(20px);
+        margin-top: rem(10px);
+        margin-bottom: rem(10px);
         line-height: rem(40px);
         border: 2px solid $navy;
         padding-left: rem(10px);
         padding-right: rem(10px);
-        border-radius: 10px;
+        border-radius: rem(10px);
         
+        @include mobile{
+          font-size: rem(12px);
+          border-radius: rem(5px);
+          line-height: rem(20px);
+          border-width: rem(1px);
+          margin-top: rem(10px);
+          margin-bottom: rem(10px);
+          @media (min-width: 500px){
+            font-size: rem(15px);
+            line-height: rem(30px);
+          }
+        }
         &::before{
           content: "";
           margin-right: rem(10px);
@@ -53,7 +71,17 @@
           background-size: cover;
           width: 40px;
           height: 40px;
-
+          @include mobile{
+            margin-right: rem(3px);
+            width: 20px;
+            height: 20px;
+            @media (min-width: 500px){
+              margin-right: rem(5px);
+              width: 30px;
+              height: 30px;
+            
+            }
+          }
         }
       }
       &--shoesname__en{
@@ -63,7 +91,7 @@
         padding-top: rem(10px);
         padding-bottom: rem(10px);
         @include mobile{
-          font-size: 4vw;
+          font-size: 7vw;
         }
       }
       &--shoesname__ko{
@@ -71,21 +99,36 @@
         font-size: 2vw;
         padding-bottom: rem(10px);
         @include mobile{
-          font-size: 3vw;
+          font-size: 4vw;
         }
       }
       &--description{
         display: block;
         font-weight: 300;
         line-height: 1.5;
-        color:$lightblue;
-        padding-top: rem(30px);
-        padding-bottom: rem(30px);
-
+        font-size: rem(16px);
+        color: rgba($navy , $alpha: .8);
+        padding-left: rem(15px);
+        border-left: 3px solid rgba($navy, $alpha: .6);
+        margin-top: rem(50px);
+        margin-bottom: rem(40px);
+        padding-top: rem(7px);
+        padding-bottom: rem(7px);
+        @include mobile{
+          font-size: 3vw;
+          padding-top: rem(15px);
+          padding-bottom: rem(15px);
+        }
+        @media (min-width: 1000px){
+          font-size: 1.5vw;
+        }
+        @media (min-width: 1300px){
+          font-size: rem(20px);
+        }
       }
       &--release, &--style, &--price{
         opacity: 0.8;
-        font-size: 2vw;
+        font-size: 2.5vw;
         padding-top: rem(30px);
         padding-bottom: rem(10px);
         display: flex;
@@ -134,7 +177,7 @@
       border-bottom: 1px solid rgba($navy, $alpha: .2);
       @include mobile{
         line-height: rem(25px);
-        font-size: rem(14px);
+        font-size: rem(12px);
 
       }
       &::before{
@@ -152,6 +195,7 @@
           width: 30px;
           height: 25px;
           background-size: 20px 20px;
+          margin-right: 0;
 
         }
       }
