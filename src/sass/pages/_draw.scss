@@ -115,7 +115,7 @@
 				margin-bottom: rem(20px);
 			}
 			&:hover{
-				color: #57D2A2;
+				color: #23aa76;
 			}
 			&.is-active{
 				@include desktop{
@@ -203,6 +203,6 @@
 	}
 
 	&__link:hover + &__figcaption em{
-		color: #57D2A2;
+		color: #23aa76;
 	}
 }
