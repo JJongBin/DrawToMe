@@ -163,7 +163,7 @@
 			}
 		}
 	}
-	&__link:hover &__detail {
+	&__link:hover &__detail, &__link:focus &__detail{
 		opacity: 1;
 		transition: opacity 0.4s;
 	}
