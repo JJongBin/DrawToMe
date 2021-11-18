@@ -314,7 +314,7 @@
     display: flex;
     gap: rem(20px);
     justify-items: flex-start;
-
+    
     li{
       position: relative;
       box-sizing: border-box;
@@ -327,6 +327,13 @@
       }
       @include mobile{
         min-width: calc((100% / 3) - (40px / 3));
+      }
+      // IE
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        margin-left: rem(20px);
+        &:first-child{
+          margin-left: 0;
+        }
       }
 
       // 인스타그램 아이디
