@@ -232,6 +232,9 @@
     border: 2px solid $navy;
     color: $navy;
   }
+  &:focus{
+    outline: 3px solid blue;
+  }
 }
 .apply--btn{
   line-height: 30px;

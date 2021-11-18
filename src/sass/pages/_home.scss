@@ -206,7 +206,8 @@
 		figure {
 			position: relative;
 		}
-		&:hover .sr-only {
+		&:hover .sr-only,
+		a:focus .sr-only {
 			transition: background-color 0.5s;
 			z-index: 10;
 			top: 0;
@@ -226,7 +227,10 @@
 				margin-top: 10%;
 				text-align: left;
 				font-size: rem(24px);
-				font-weight: 700;
+        font-weight: 700;
+        @include mobile{
+          font-size: rem(12px);
+        }
 			}
 			p:last-child {
 				margin-top: rem(20px);
@@ -355,7 +359,13 @@
 				text-shadow: 1px 1px 0 0 #000000;
 				position: absolute;
 				bottom: 5%;
-				left: 5%;
+        left: 5%;
+        @include mobile{
+          font-size: rem(12px);
+          bottom: 10%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
 			}
 			figure {
 				width: 100%;
