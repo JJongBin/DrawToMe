@@ -181,14 +181,17 @@
 		}
 
 		.detail-list {
+			width: 90%;
 			position: absolute;
 			bottom: 10%;
+			color: #57d2a2;
+			font-weight: 700;
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
+
 			li {
 				display: inline-block;
-				// margin: 10% 0;
 				@include mobile {
 					margin: 2% 0;
 				}
