@@ -119,6 +119,9 @@
           padding-top: rem(15px);
           padding-bottom: rem(15px);
         }
+        @media (max-width: 400px){
+          font-size: rem(12px);
+        }
         @media (min-width: 1000px){
           font-size: 1.5vw;
         }
