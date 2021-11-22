@@ -18,6 +18,7 @@
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.2.0",
     "normalize.css": "^8.0.1",
+    "objectFitPolyfill": "^2.3.5",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
@@ -34,5 +35,6 @@
     "not dead",
     "> 1% in KR",
     "ie 11"
-  ]
+  ],
+  "dependencies": {}
 }

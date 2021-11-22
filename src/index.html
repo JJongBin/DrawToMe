@@ -56,7 +56,7 @@
 		<main>
 			<div class="video">
 					<figure class="video__iframe-container">
-						<video class="video__iframe" muted playsinline loop autoplay>
+						<video class="video__iframe" data-object-fit="cover" muted playsinline loop autoplay>
 							<source src="./assets/videos/video.webm" type="video/webm">
 							<source src="assets/videos/video.mp4" type="video/mp4">
 						</video>
@@ -70,6 +70,9 @@
 					<div class="video-words--bold">드로우의 시작,</div>
 				</div>
 			</div>
+			<!-- <img src="./assets/images/mouse.png" alt="">
+			<img src="./assets/images/mouse.png" >
+			<img src="./assets/images/mouse.png" alt=""> -->
 
 			<!-- section wrapper -->
 			<div class="main-wrapper">
@@ -183,42 +186,60 @@
 							<li>
 								<span>@weareteam</span>
 								<figure>
-									<img class="daily__img" src="./assets/images/_mainpage/daily01.jpg" alt="@weareteam">
+									<picture>
+										<source srcset="./assets/images/_mainpage/daily01.webp" type="image/webp" />
+										<img class="daily__img" src="./assets/images/_mainpage/daily01.jpg" alt="@weareteam">
+									</picture>
 									<figcaption class="sr-only">팀사진</figcaption>
 								</figure>
 							</li>
 							<li>
 								<span>@bbungbbung</span>
 								<figure>
-									<img class="daily__img" src="./assets/images/_mainpage/daily02.jpg" alt="@bbungbbung">
+									<picture>
+										<source srcset="./assets/images/_mainpage/daily02.webp" type="image/webp" />
+										<img class="daily__img" src="./assets/images/_mainpage/daily02.jpg" alt="@bbungbbung">
+									</picture>
 									<figcaption class="sr-only">아가 민성</figcaption>
 								</figure>
 							</li>
 							<li>
 								<span>@mingsomm</span>
 								<figure>
-									<img class="daily__img" src="./assets/images/_mainpage/daily03.jpg" alt="@mingsomm">
+									<picture>
+										<source srcset="./assets/images/_mainpage/daily03.webp" type="image/webp" />
+										<img class="daily__img" src="./assets/images/_mainpage/daily03.jpg" alt="@mingsomm">
+									</picture>
 									<figcaption class="sr-only">아가 민지</figcaption>
 								</figure>
 							</li>
 							<li>
 								<span>@chihanna</span>
 								<figure>
-									<img class="daily__img" src="./assets/images/_mainpage/daily04.jpg" alt="@chihanna">
+									<picture>
+										<source srcset="./assets/images/_mainpage/daily04.webp" type="image/webp" />
+										<img class="daily__img" src="./assets/images/_mainpage/daily04.jpg" alt="@chihanna">
+									</picture>
 									<figcaption class="sr-only">아가 한나</figcaption>
 								</figure>
 							</li>
 							<li>
 								<span>@sa5jeong</span>
 								<figure>
-									<img class="daily__img" src="./assets/images/_mainpage/daily05.jpg" alt="@saojeong">
+									<picture>
+										<source srcset="./assets/images/_mainpage/daily05.webp" type="image/webp" />
+										<img class="daily__img" src="./assets/images/_mainpage/daily05.jpg" alt="@saojeong">
+									</picture>
 									<figcaption class="sr-only">아가 종빈</figcaption>
 								</figure>
 							</li>
 							<li>
 								<span>@pyeongnaeng</span>
 								<figure>
-									<img class="daily__img" src="./assets/images/_mainpage/daily06.jpg" alt="@pyeongnaeng">
+									<picture>
+										<source srcset="./assets/images/_mainpage/daily06.webp" type="image/webp" />
+										<img class="daily__img" src="./assets/images/_mainpage/daily06.jpg" alt="@pyeongnaeng">
+									</picture>
 									<figcaption class="sr-only">평양냉면</figcaption>
 								</figure>
 							</li>
