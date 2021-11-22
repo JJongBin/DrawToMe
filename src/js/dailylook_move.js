@@ -2,8 +2,6 @@
 // daily look
 const dailyBox = document.querySelector(".daily__ul");
 const len = dailyBox.children.length;
-// let showSize;
-// let showItem;
 let showSize = dailyBox.children[0].clientWidth; // 아이템 하나의 초기값
 let showItem = Math.ceil(dailyBox.clientWidth / (showSize + 20));
 
