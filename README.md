@@ -90,7 +90,7 @@ npm run start
 <img src="./assets/contributors.jpg">
 
 - [원종빈](https://github.com/JJongBin) @sa5jeong
-- [김민성](https://gihub.com/minsoftk) @bbungbbung
+- [김민성](https://github.com/minsoftk) @bbungbbung
 - [박민지](https://github.com/urther) @mingsomm
 - [최한나](https://github.com/hann3) @chihanna
   
