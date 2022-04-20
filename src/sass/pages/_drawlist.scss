@@ -2,232 +2,229 @@
 
 // draw 블록
 .draw {
-  position: relative;
-  @include desktop {
-    margin: 0 rem(30px);
-  }
+	position: relative;
+	@include desktop {
+		margin: 0 rem(30px);
+	}
 
-  @include mobile {
-    margin: 0 rem(20px);
-    display: block;
-  }
+	@include mobile {
+		margin: 0 rem(20px);
+		display: block;
+	}
 
-  &__title {
-    display: inline-block;
-    width: 100%;
-    @include desktop {
-      padding: rem(35px) rem(20px) rem(40px) 0;
-      @include fontSB($size: rem(40px), $bold: 700);
-    }
-    @include mobile {
-      @include fontSB($size: rem(30px), $bold: 700);
-      padding: rem(20px) rem(20px) rem(20px) 0;
-    }
-  }
+	&__title {
+		display: inline-block;
+		width: 100%;
+		@include desktop {
+			padding: rem(35px) rem(20px) rem(40px) 0;
+			@include fontSB($size: rem(40px), $bold: 700);
+		}
+		@include mobile {
+			@include fontSB($size: rem(30px), $bold: 700);
+			padding: rem(20px) rem(20px) rem(20px) 0;
+		}
+	}
 
-  &__button {
-    @include position($right: 0, $top: rem(55px));
-    background-size: cover;
-    background-color: transparent;
-    background-image: url('./../assets/images/draw-button-is-active.png');
-    border: 0;
-    width: rem(50px);
-    height: rem(50px);
-    @include mobile {
-      display: none;
-    }
-    &.is-active {
-      background-color: transparent;
-      background-image: url('./../assets/images/draw-button.png');
-    }
-  }
+	&__button {
+		@include position($right: 0, $top: rem(55px));
+		background-size: cover;
+		background-color: transparent;
+		background-image: url('./../assets/images/draw-button-is-active.png');
+		border: 0;
+		width: rem(50px);
+		height: rem(50px);
+		@include mobile {
+			display: none;
+		}
+		&.is-active {
+			background-color: transparent;
+			background-image: url('./../assets/images/draw-button.png');
+		}
+	}
 
-  &__list {
-    &li {
-      margin-right: rem(16px);
-    }
-    transition: all 0.5s ease-in-out;
-    @include mobile {
-      @include gridbox-mobile($column-count: 1);
-      @include layout-mobile;
-    }
-    @include desktop {
-      @include gridbox;
-      @include layout;
-      &.is-active {
-        @include gridbox-active();
-        @include layout2;
-        animation: gridAnimation 0.7s;
-      }
-      animation: gridAnimation2 0.7s;
-    }
-  }
+	&__list {
+		&li {
+			margin-right: rem(16px);
+		}
+		transition: all 0.5s ease-in-out;
+		@include mobile {
+			@include gridbox($column-count: 1);
+		}
+		@include desktop {
+			@include gridbox($column-count: 2);
+			&.is-active {
+				@include gridbox($column-count: 3);
+				animation: gridAnimation 0.7s;
+			}
+			animation: gridAnimation2 0.7s;
+		}
+	}
 
-  @keyframes gridAnimation {
-    0% {
-      opacity: 0;
-    }
-    5% {
-      opacity: 0.2;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes gridAnimation2 {
-    0% {
-      opacity: 0;
-    }
-    5% {
-      opacity: 0.2;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+	@keyframes gridAnimation {
+		0% {
+			opacity: 0;
+		}
+		5% {
+			opacity: 0.2;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@keyframes gridAnimation2 {
+		0% {
+			opacity: 0;
+		}
+		5% {
+			opacity: 0.2;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 
-  &__link {
-    position: relative;
-    display: inline-block;
-    @include mobile {
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    @include desktop {
-      img {
-        width: 100%;
-        height: 100%;
-        border-radius: rem(10px);
-      }
-    }
-  }
+	&__link {
+		position: relative;
+		display: inline-block;
+		@include mobile {
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		@include desktop {
+			img {
+				width: 100%;
+				height: 100%;
+				border-radius: rem(10px);
+			}
+		}
+	}
 
-  &__figcaption {
-    display: block;
-    @include paddingX(10px);
-    .figcaption-title {
-      display: block;
-      font-weight: 700;
-      font-size: rem(22px);
-      @include marginY(15px);
-      @include mobile {
-        font-size: rem(22px);
-        margin-top: rem(30px);
-        margin-bottom: rem(20px);
-      }
-      &:hover {
-        color: #23aa76;
-      }
-      &.is-active {
-        @include desktop {
-          font-size: rem(20px);
-        }
-      }
-    }
+	&__figcaption {
+		display: block;
+		@include paddingX(10px);
+		.figcaption-title {
+			display: block;
+			font-weight: 700;
+			font-size: rem(22px);
+			@include marginY(15px);
+			@include mobile {
+				font-size: rem(22px);
+				margin-top: rem(30px);
+				margin-bottom: rem(20px);
+			}
+			&:hover {
+				color: #23aa76;
+			}
+			&.is-active {
+				@include desktop {
+					font-size: rem(20px);
+				}
+			}
+		}
 
-    p {
-      display: inline-block;
-      font-size: rem(18px);
-      margin-bottom: rem(50px);
-      @include mobile {
-        font-size: 1.2rem;
-        margin-bottom: rem(30px);
-      }
-      &::after {
-        content: ' 원';
-      }
-    }
-  }
+		p {
+			display: inline-block;
+			font-size: rem(18px);
+			margin-bottom: rem(50px);
+			@include mobile {
+				font-size: 1.2rem;
+				margin-bottom: rem(30px);
+			}
+			&::after {
+				content: ' 원';
+			}
+		}
+	}
 
-  // 진행중인 드로우 상품 목록
-  .draw__title {
-    font-weight: 700;
-    font-size: rem(35px);
-    margin: rem(14px) 0;
-    @include mobile {
-      margin-left: rem(10px);
-      margin-right: rem(10px);
-      font-size: rem(24px);
-    }
-    &::after {
-      content: '진행중인 드로우 목록';
-      padding-top: rem(5px);
-      display: block;
-      font-size: rem(20px);
-      font-weight: 500;
-      color: $lightblue;
-      @include mobile {
-        font-size: rem(16px);
-      }
-    }
-  }
-  &__link:hover &__detail,
-  &__link:focus &__detail {
-    opacity: 1;
-    transition: opacity 0.4s;
-  }
-  &__detail {
-    opacity: 0;
-    background-color: rgba($color: $black, $alpha: 0.6);
-    border-radius: rem(10px);
-    width: 100%;
-    height: 100%;
-    padding: 5%;
-    position: absolute;
-    top: 0;
-    color: $white;
+	// 진행중인 드로우 상품 목록
+	.draw__title {
+		font-weight: 700;
+		font-size: rem(35px);
+		margin: rem(14px) 0;
+		@include mobile {
+			margin-left: rem(10px);
+			margin-right: rem(10px);
+			font-size: rem(24px);
+		}
+		&::after {
+			content: '진행중인 드로우 목록';
+			padding-top: rem(5px);
+			display: block;
+			font-size: rem(20px);
+			font-weight: 500;
+			color: $lightblue;
+			@include mobile {
+				font-size: rem(16px);
+			}
+		}
+	}
+	&__link:hover &__detail,
+	&__link:focus &__detail {
+		opacity: 1;
+		transition: opacity 0.4s;
+	}
+	&__detail {
+		opacity: 0;
+		background-color: rgba($color: $black, $alpha: 0.6);
+		border-radius: rem(10px);
+		width: 100%;
+		height: 100%;
+		padding: 5%;
+		position: absolute;
+		top: 0;
+		color: $white;
 
-    @include mobile {
-      padding: 5%;
-    }
-    span {
-      line-height: 1.5em;
-      height: 4.5em;
-      display: inline-block;
-      font-size: rem(18px);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      word-break: keep-all;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      line-clamp: 3;
-      opacity: 0.8;
-    }
+		@include mobile {
+			padding: 5%;
+		}
+		span {
+			line-height: 1.5em;
+			height: 4.5em;
+			display: inline-block;
+			font-size: rem(18px);
+			overflow: hidden;
+			text-overflow: ellipsis;
+			word-break: keep-all;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			line-clamp: 3;
+			opacity: 0.8;
+		}
 
-    .detail-list {
-      padding-top: rem(10px);
-      border-top: 1px solid $white;
-      width: 90%;
-      position: absolute;
-      left: 5%;
-      bottom: 10%;
-      color: $white;
-      font-weight: 700;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-      font-size: rem(18px);
+		.detail-list {
+			padding-top: rem(10px);
+			border-top: 1px solid $white;
+			width: 90%;
+			position: absolute;
+			left: 5%;
+			bottom: 10%;
+			color: $white;
+			font-weight: 700;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			font-size: rem(18px);
 
-      li {
-        display: inline-block;
-        @include mobile {
-          margin: 2% 0;
-        }
-      }
-      li:nth-child(n + 2)::before {
-        content: '\007C'+' ';
-        margin-right: 2%;
-        @include mobile {
-          margin-right: 1%;
-        }
-      }
-    }
-  }
+			li {
+				display: inline-block;
+				@include mobile {
+					margin: 2% 0;
+				}
+			}
+			li:nth-child(n + 2)::before {
+				content: '\007C'+' ';
+				margin-right: 2%;
+				@include mobile {
+					margin-right: 1%;
+				}
+			}
+		}
+	}
 
-  &__link:hover + &__figcaption em {
-    color: #23aa76;
-  }
+	&__link:hover + &__figcaption em {
+		color: #23aa76;
+	}
 }
