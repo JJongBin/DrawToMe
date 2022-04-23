@@ -2,7 +2,7 @@
 
 한정판 스니커즈 발매 소식과 응모 정보를 제공하는 웹사이트
 
-[데모 웹사이트](https://gallant-payne-2a2f4d.netlify.app/)
+[데모 웹사이트](https://6263c53660fece0b4ae52425--gallant-payne-2a2f4d.netlify.app/)
 
 ## 데스크탑
 
