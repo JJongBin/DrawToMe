@@ -6,85 +6,88 @@
 // font-size, font-weight, padding, margin, border, position,test
 
 @mixin fontSB($size: initial, $bold: initial) {
-	font-size: $size;
-	font-weight: $bold;
+  font-size: $size;
+  font-weight: $bold;
 }
 
 @mixin autoMargin($marginX: auto) {
-	margin-left: $marginX;
-	margin-right: $marginX;
+  margin-left: $marginX;
+  margin-right: $marginX;
 }
 
 // padding 관련 믹스인
 @mixin paddingY($paddingY: 0) {
-	padding-top: rem($paddingY);
-	padding-bottom: rem($paddingY);
+  padding-top: rem($paddingY);
+  padding-bottom: rem($paddingY);
 }
 @mixin paddingX($paddingX: 0) {
-	padding-left: rem($paddingX);
-	padding-right: rem($paddingX);
+  padding-left: rem($paddingX);
+  padding-right: rem($paddingX);
 }
 
 @mixin marginY($marginY: 0) {
-	margin-top: rem($marginY);
-	margin-bottom: rem($marginY);
+  margin-top: rem($marginY);
+  margin-bottom: rem($marginY);
 }
 
 @mixin marginX($marginX: 0) {
-	margin-left: rem($marginX);
-	margin-right: rem($marginX);
+  margin-left: rem($marginX);
+  margin-right: rem($marginX);
 }
 
 @mixin border($px: 1px, $type: solid, $color: #c8c8c8) {
-	border: $px $type $color;
+  border: $px $type $color;
 }
 
 @mixin position(
-	$position: absolute,
-	$top: initial,
-	$right: initial,
-	$bottom: initial,
-	$left: initial
+  $position: absolute,
+  $top: initial,
+  $right: initial,
+  $bottom: initial,
+  $left: initial
 ) {
-	position: $position;
-	top: $top;
-	right: $right;
-	bottom: $bottom;
-	left: $left;
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
 }
 
 @mixin positionCenterX() {
-	@include position;
-	left: 50%;
-	transform: translateX(-50%);
+  @include position;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @mixin positionCenterY() {
-	@include position;
-	top: 50%;
-	transform: translateY(-50%);
+  @include position;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @mixin positionCenter(
-	$position: absolute,
-	$top: initial,
-	$right: initial,
-	$bottom: initial,
-	$left: initial
+  $position: absolute,
+  $top: initial,
+  $right: initial,
+  $bottom: initial,
+  $left: initial
 ) {
-	position: $position;
+  position: $position;
 }
 // footer 아이콘 이미지 정렬
 @mixin footer-img($size: cover, $repeat: no-repeat) {
-	display: block;
-	background: url('./../assets/images/icon_sprites.png') $repeat;
-	background-size: $size;
+  display: block;
+  background: url('./../assets/images/icon_sprites.png') $repeat;
+  background-size: $size;
 }
 
 // 그리드 믹스인
 @mixin gridbox($column-count: 2, $column-gap: rem(16px), $row-gap: 0) {
-	display: grid;
-	grid-template-columns: repeat($column-count, 1fr);
-	grid-template-rows: auto;
-	grid-column-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    width: calc(100% / #{$column-count});
+    padding: 10px;
+  }
 }
