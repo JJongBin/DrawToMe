@@ -2,7 +2,7 @@
 
 한정판 스니커즈 발매 소식과 응모 정보를 제공하는 웹사이트
 
-[데모 웹사이트](https://gallant-payne-2a2f4d.netlify.app/)
+[데모 웹사이트](https://mellifluous-longma-470928.netlify.app)
 
 ## 데스크탑
 
@@ -11,10 +11,6 @@
 ## 모바일
 
 <img src="./assets/mobile.gif">
-  
-  
-    
-
 
 # 2. 개발환경
 
